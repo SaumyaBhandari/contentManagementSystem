@@ -13,7 +13,7 @@ mongoose
   .catch((err) => {
     console.log('failed to connect with database');
   });
-
-app.listen(4000, () => {
+process.env.PORT = 4000;
+app.listen(process.env.PORT, () => {
   console.log('server is up and running \n Port:4000');
 });
