@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./head',{title:'HeraldCollege'}); %>
+    <script type="text/javascript">
+      function togglemenu() {
+        document.getElementById('sidebar').classList.toggle('active');
+      }
+    </script>
+  </head>
+  <body>
+    <div id="dashboard" style="background-image: url(images/pic1.jpg)">
+      <div id="sidebar" onclick="togglemenu()">
+        <div class="user_icon">
+          <img src="/images/user_icon.png" alt="User_Icon" />
+        </div>
+        <div class="toggle-btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul>
+          <li>
+            <a href="/"><i class="fa fa-arrow-left" color="black"></i>Back</a>
+          </li>
+          <li>
+            <a href="/dashboard"
+              ><i class="fa fa-home" color="black"></i>Home</a
+            >
+          </li>
+          <li id="courses" data-courses="<%= JSON.stringify(courses) %>">
+            <a><i class="fa fa-book" color="black"></i>Course</a>
+          </li>
+          <li>
+            <a id="event"><i class="fa fa-bell" color="black"></i>Event</a>
+          </li>
+          <li>
+            <a href="gallery.html"
+              ><i class="fa fa-image" color="black"></i>Gallery</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="dashboard">
+        <h2>
+          <a href="/dashboard"
+            ><i class="fa fa-fw fa-clone" color="black"></i>Dashboard</a
+          >
+        </h2>
+      </div>
+    </div>
+    <div id="dashBoardContainer"></div>
+
+    <!-- <footer><%- include('./footer'); %></footer> -->
+    <script src="/js/bundle.js"></script>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./head',{title:'HeraldCollege'}); %>
+  </head>
+  <body>
+    <div id="divid" data-message="<%=message%>"></div>
+    <script>
+      alert(document.getElementById('divid').getAttribute('data-message'));
+      window.location.assign('/dashboard');
+    </script>
+
+    <footer><%- include('./footer'); %></footer>
+  </body>
+</html>

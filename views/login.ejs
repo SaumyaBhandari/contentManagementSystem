@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./head',{title:'Login'}); %>
+  </head>
+  <body>
+    <%- include('./header'); %>
+
+    <form class="login-form form-group" id="login-form">
+      <label>Email</label>
+      <input
+        type="email"
+        class="form-control"
+        name="email"
+        required
+        id="email"
+        placeholder="enter your email"
+      />
+      <label>Password</label>
+      <input
+        type="password"
+        class="form-control"
+        name="password"
+        required
+        id="password"
+        placeholder="enter your password"
+      />
+
+      <div class="spinner-grow text-warning" id="spinner-grow"></div>
+
+      <button class="btn btn-warning btn-md" id="login-btn">Login</button>
+    </form>
+
+    <footer><%- include('./footer'); %></footer>
+  </body>
+</html>
