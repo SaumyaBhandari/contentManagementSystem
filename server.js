@@ -1,4 +1,5 @@
 const app = require('./app');
+const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 
 mongoose
@@ -13,7 +14,7 @@ mongoose
   .catch((err) => {
     console.log('failed to connect with database');
   });
-process.env.PORT = 4000;
+
 app.listen(process.env.PORT, () => {
   console.log('server is up and running \n Port:4000');
 });
