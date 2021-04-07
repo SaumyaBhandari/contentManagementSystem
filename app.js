@@ -27,7 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // using morgan for logging
 
-// routes
+// routes for our website
 
 app.use('/', authController.isLoggedIn, viewRoutes);
 app.use('/api/v1/courses', courseRoute);
