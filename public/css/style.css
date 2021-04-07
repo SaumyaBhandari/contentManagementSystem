@@ -152,6 +152,9 @@ th {
 .register:hover {
   color: #d9e3f1;
 }
+#spinner-grow {
+  display: none;
+}
 .home-content {
   display: flex;
   align-items: center;
