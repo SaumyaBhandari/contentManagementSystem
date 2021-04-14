@@ -15,6 +15,7 @@ mongoose
     console.log('failed to connect with database');
   });
 
-app.listen(process.env.PORT, () => {
+// app.listen(process.env.PORT, () => {
+app.listen(4000, () => {
   console.log('server is up and running \n Port:4000');
 });
