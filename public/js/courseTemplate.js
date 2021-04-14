@@ -152,7 +152,7 @@ function getCourseTemplate() {
                   <th>Edit</th>
                   <th>Delete</th>
               </tr>
-                      ${courseCard}
+                     
                       </table>
                       </div>
                   </div>
