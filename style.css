@@ -15,7 +15,7 @@
 	position: fixed;
 	width: 20%;
 	height: 100%;
-	background-color: #21B6A8;
+	background-color: green;
 }
 #sidebar a{
 	color: white;
@@ -46,7 +46,7 @@
 	margin:3px;
 }
 #sidebar a:hover{
-	color: #21B6A8;
+	color: #48b13e;
 }
 #sidebar li:hover{
 	background-color: white;
@@ -60,7 +60,7 @@
 	margin-left: 25%;
 }
 h2 a{
-	color: #21B6A8;
+	color: #48b13e;
 }
 @media only screen and (max-width:650px) {
   #sidebar{
@@ -109,9 +109,6 @@ td, th {
 
 /*..........Gallery.........*/
 
-/*.gallery{
-    margin:10px;
-}*/
 .gallery img{
 	float: right;
     width:400px;
