@@ -10,11 +10,10 @@ const schema = new mongoose.Schema({
   tag: String,
   description: String,
   entryRequirement: String,
-  year1: {
-    type: [String],
-  },
-  year2: [String],
-  year3: [String],
+  year1: String,
+
+  year2: String,
+  year3: String,
 });
 const model = mongoose.model('Course', schema);
 

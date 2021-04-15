@@ -34,11 +34,11 @@ exports.getCourses = async (req, res, next) => {
 
 exports.addCourse = catchAsync(async (req, res, next) => {
   console.log(req.body);
-  if ((req.body.year1, req.body.year2, req.body.year3)) {
-    req.body.year1 = req.body.year1.split(',');
-    req.body.year2 = req.body.year2.split(',');
-    req.body.year3 = req.body.year3.split(',');
-  }
+  // if ((req.body.year1, req.body.year2, req.body.year3)) {
+  //   req.body.year1 = req.body.year1.split(',');
+  //   req.body.year2 = req.body.year2.split(',');
+  //   req.body.year3 = req.body.year3.split(',');
+  // }
 
   const course = await Course.create(req.body);
   console.log('course');
@@ -49,36 +49,24 @@ exports.addCourse = catchAsync(async (req, res, next) => {
   });
 });
 
-exports.getSingleCourse = async (req, res, next) => {
-  try {
-    const course = await Course.findOne({ _id: req.params.id });
-    res.status(200).json({
-      status: 'success',
-      course,
-    });
-  } catch (err) {
-    console.log(err.message);
-    res.status(400).json({
-      status: 'failed',
-      message: 'failed to get course',
-    });
-  }
-};
-exports.updateCourse = async (req, res, next) => {
-  try {
-    const course = await Course.findByIdAndUpdate(req.params.id, req.body);
-    res.status(200).json({
-      status: 'success',
-      course,
-    });
-  } catch (err) {
-    console.log(err.message);
-    res.status(400).json({
-      status: 'failed',
-      message: 'failed to delete course',
-    });
-  }
-};
+exports.getSingleCourse = catchAsync(async (req, res, next) => {
+  const course = await Course.findOne({ _id: req.params.courseID });
+  res.status(200).render('course', {
+    course,
+    title: course.tag,
+  });
+});
+exports.updateCourse = catchAsync(async (req, res, next) => {
+  const course = await Course.findOneAndUpdate(
+    { courseId: req.params.id },
+    req.body
+  );
+  console.log('inside update course............');
+  console.log(course);
+  res.status(200).render('success', {
+    message: 'course updated successfully',
+  });
+});
 
 exports.deleteCourse = catchAsync(async (req, res, next) => {
   console.log('course id = == = ' + req.params.courseID);

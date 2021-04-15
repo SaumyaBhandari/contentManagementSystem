@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./head'); %>
+  </head>
+  <body>
+    <%- include('./header'); %>
+
+   
+<div class="container-fluid bg-light">
+	<div class=" first-column bg-dark m-5 pb-2 text-white">
+		<h4 class="p-4 text-left"> Course Summary</h4>
+			<p class="ml-4 mr-4"><%= course.description %> </p>
+
+		<h5 class="p-3 text-left">Course Duration: 3 years</h5>
+			<button class="btn btn-success text-white m-3" style="width: 30%;"> Apply Now </button>
+	</div>
+	<div class="second-column pl-3">
+		<h5 style="color: grey; margin-top: 20px;"><%= course.tag %></h5>
+		<h2 class="mb-2"> <%= course.name %></h2>
+			<p class="mt-3"><%= course.description %></p>
+
+		<h2 class="m-4">Modules</h2>
+				
+			<div class="card text-left">
+				<div class="card-header">
+					<ul class="nav-tabs card-header-tabs nav nav-justified">
+						<li class="nav-tabs"><a href="#year-1" class="nav-link" data-toggle = "tab">Year 1</a></li>
+						<li class="nav-tabs"><a href="#year-2" class="nav-link" data-toggle = "tab">Year 2</a></li>
+						<li class="nav-tabs"><a href="#year-3" class="nav-link" data-toggle = "tab">Year 3</a></li>
+					</ul>
+				</div>
+
+				<div class="card-body text-left">
+					<div class="tab-content container">
+						<div class="tab-pane active" id="year-1">
+							<br>
+							<h4>Year 1 </h4>
+							<h5>Overview</h5>
+								<p>This programme aims to provide students with the knowledge of core principles of computer science by combining it with modern computer languages, tools, techniques, and methodologies used by computer professional all over the world. Students will be able to develop and enhance themselves as a programmer, along with problem solving skills.</p>
+							<h5> Modules </h5>
+								<% let modules = course.year1.split(',') %>
+                                <% for(let i = 0;i<modules.length;i++){%>
+                                    <p><%= modules[i]%></p>
+
+                               <% }%>
+						</div>
+
+						<div class="tab-pane active" id="year-2">
+							<br>
+							<h4>Year 2 </h4>
+							<h5>Overview</h5>
+								<p>This programme aims to provide students with the knowledge of core principles of computer science by combining it with modern computer languages, tools, techniques, and methodologies used by computer professional all over the world. Students will be able to develop and enhance themselves as a programmer, along with problem solving skills.</p>
+							<h5> Modules </h5>
+                            <%  modules = course.year2.split(',') %>
+                            <% for(let i = 0;i<modules.length;i++){%>
+                                <p><%= modules[i]%></p>
+
+                           <% }%>
+						</div>
+
+						<div class="tab-pane active" id="year-3">
+							<br>
+							<h4>Year 3 </h4>
+							<h5>Overview</h5>
+								<p>This programme aims to provide students with the knowledge of core principles of computer science by combining it with modern computer languages, tools, techniques, and methodologies used by computer professional all over the world. Students will be able to develop and enhance themselves as a programmer, along with problem solving skills.</p>
+							<h5> Modules </h5>
+                            <%  modules = course.year3.split(',') %>
+                            <% for(let i = 0;i<modules.length;i++){%>
+                                <p><%= modules[i]%></p>
+
+                           <% }%>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+		<h3 class="m-3">Admission Eligibility</h3>
+			<p class="m-4"><%= course.entryRequirement %></p>
+	</div>
+
+</div>
+
+
+    <footer><%- include('./footer'); %></footer>
+  </body>
+</html>

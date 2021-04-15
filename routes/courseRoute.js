@@ -8,7 +8,7 @@ router
 router
   .route('/:courseID')
   .get(courseController.getSingleCourse)
-  .patch(courseController.updateCourse)
   .delete(courseController.deleteCourse);
+router.post('/update/:courseID', courseController.updateCourse);
 
 module.exports = router;
