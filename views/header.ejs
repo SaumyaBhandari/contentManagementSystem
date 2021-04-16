@@ -59,7 +59,7 @@
 
 
             <% for(var i=0; i<courses.length; i++) {%>
-               <a class="dropdown-item" href="/courses/<%= courses[i].courseID %>"
+               <a class="dropdown-item" href="/courses/<%= courses[i]._id %>"
               ><%= courses[i].tag %></a
             >
            <% } %> <%}%>
