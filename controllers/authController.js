@@ -100,10 +100,6 @@ exports.isLoggedIn = async (req, res, next) => {
     }
 
     res.locals.user = currentUser;
-    // res.status(200).json({
-    //   status: 'success',
-    //   user: currentUser,
-    // });
 
     return next();
   }
