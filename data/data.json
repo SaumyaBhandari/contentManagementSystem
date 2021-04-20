@@ -1,0 +1,602 @@
+[
+  {
+    "name": "Brody",
+    "email": "Wahyn@heraldcollege.edu.np",
+    "password": "Roth@123",
+    "role": "student"
+  },
+  {
+    "name": "Dylan",
+    "email": "Gikl@heraldcollege.edu.np",
+    "password": "Neville@123",
+    "role": "student"
+  },
+  {
+    "name": "Abel",
+    "email": "Edrih@heraldcollege.edu.np",
+    "password": "Demetrius@123",
+    "role": "student"
+  },
+  {
+    "name": "Jack",
+    "email": "Cain@heraldcollege.edu.np",
+    "password": "Blaze@123",
+    "role": "student"
+  },
+  {
+    "name": "Kuame",
+    "email": "Kibo@heraldcollege.edu.np",
+    "password": "Forrest@123",
+    "role": "student"
+  },
+  {
+    "name": "Wyatt",
+    "email": "Lerojy@heraldcollege.edu.np",
+    "password": "Dante@123",
+    "role": "student"
+  },
+  {
+    "name": "Ciaran",
+    "email": "Carl@heraldcollege.edu.np",
+    "password": "Yoshio@123",
+    "role": "student"
+  },
+  {
+    "name": "Graiden",
+    "email": "Ashton@heraldcollege.edu.np",
+    "password": "Moses@123",
+    "role": "student"
+  },
+  {
+    "name": "Cruz",
+    "email": "Blake@heraldcollege.edu.np",
+    "password": "Allen@123",
+    "role": "student"
+  },
+  {
+    "name": "Ciaran",
+    "email": "Laith@heraldcollege.edu.np",
+    "password": "Hammett@123",
+    "role": "student"
+  },
+  {
+    "name": "Reuben",
+    "email": "Alden@heraldcollege.edu.np",
+    "password": "Solomon@123",
+    "role": "student"
+  },
+  {
+    "name": "Ethan",
+    "email": "Griffith@heraldcollege.edu.np",
+    "password": "Gray@123",
+    "role": "student"
+  },
+  {
+    "name": "Camden",
+    "email": "Dolan@heraldcollege.edu.np",
+    "password": "Peter@123",
+    "role": "student"
+  },
+  {
+    "name": "Charles",
+    "email": "Xander@heraldcollege.edu.np",
+    "password": "Levi@123",
+    "role": "student"
+  },
+  {
+    "name": "Preston",
+    "email": "Ivor@heraldcollege.edu.np",
+    "password": "Hunter@123",
+    "role": "student"
+  },
+  {
+    "name": "Burke",
+    "email": "Aquila@heraldcollege.edu.np",
+    "password": "Merritt@123",
+    "role": "student"
+  },
+  {
+    "name": "Nero",
+    "email": "Rajah@heraldcollege.edu.np",
+    "password": "Xenos@123",
+    "role": "student"
+  },
+  {
+    "name": "Lance",
+    "email": "Quamar@heraldcollege.edu.np",
+    "password": "Timothy@123",
+    "role": "student"
+  },
+  {
+    "name": "Grant",
+    "email": "Perry@heraldcollege.edu.np",
+    "password": "Kasper@123",
+    "role": "student"
+  },
+  {
+    "name": "Kevin",
+    "email": "Rooney@heraldcollege.edu.np",
+    "password": "Edward@123",
+    "role": "student"
+  },
+  {
+    "name": "Leroy",
+    "email": "Wylie@heraldcollege.edu.np",
+    "password": "Adam@123",
+    "role": "student"
+  },
+  {
+    "name": "Sylvester",
+    "email": "Kyle@heraldcollege.edu.np",
+    "password": "Channing@123",
+    "role": "student"
+  },
+  {
+    "name": "Herrod",
+    "email": "Chaney@heraldcollege.edu.np",
+    "password": "Wylie@123",
+    "role": "student"
+  },
+  {
+    "name": "Alan",
+    "email": "Shad@heraldcollege.edu.np",
+    "password": "Thor@123",
+    "role": "student"
+  },
+  {
+    "name": "Zachary",
+    "email": "Stone@heraldcollege.edu.np",
+    "password": "Kevin@123",
+    "role": "student"
+  },
+  {
+    "name": "Kenneth",
+    "email": "Eric@heraldcollege.edu.np",
+    "password": "Wyatt@123",
+    "role": "student"
+  },
+  {
+    "name": "Damon",
+    "email": "Octavius@heraldcollege.edu.np",
+    "password": "Len@123456789",
+    "role": "student"
+  },
+  {
+    "name": "Garth",
+    "email": "Brandon@heraldcollege.edu.np",
+    "password": "Ross@123",
+    "role": "student"
+  },
+  {
+    "name": "Kenyon",
+    "email": "Ross@heraldcollege.edu.np",
+    "password": "Caesar@123",
+    "role": "student"
+  },
+  {
+    "name": "Kane",
+    "email": "rock@heraldcollege.edu.np",
+    "password": "Nehru@123",
+    "role": "student"
+  },
+  {
+    "name": "Armand",
+    "email": "Conan@heraldcollege.edu.np",
+    "password": "Stuart@123",
+    "role": "student"
+  },
+  {
+    "name": "Russell",
+    "email": "Tanner@heraldcollege.edu.np",
+    "password": "Fuller@123",
+    "role": "student"
+  },
+  {
+    "name": "Laith",
+    "email": "Reuben@heraldcollege.edu.np",
+    "password": "Matthew@123",
+    "role": "student"
+  },
+  {
+    "name": "Lucian",
+    "email": "Vaughan@heraldcollege.edu.np",
+    "password": "Wesley@123",
+    "role": "student"
+  },
+  {
+    "name": "Raymond",
+    "email": "Kelly@heraldcollege.edu.np",
+    "password": "Hilel@123",
+    "role": "student"
+  },
+  {
+    "name": "Marvin",
+    "email": "Jerome@heraldcollege.edu.np",
+    "password": "Samson@123",
+    "role": "student"
+  },
+  {
+    "name": "Raphael",
+    "email": "Julian@heraldcollege.edu.np",
+    "password": "Chase@123",
+    "role": "student"
+  },
+  {
+    "name": "Paki",
+    "email": "Dylan@heraldcollege.edu.np",
+    "password": "Walker@123",
+    "role": "student"
+  },
+  {
+    "name": "Quinn",
+    "email": "Xanr@heraldcollege.edu.np",
+    "password": "Jermaine@123",
+    "role": "student"
+  },
+  {
+    "name": "Cole",
+    "email": "Acton@heraldcollege.edu.np",
+    "password": "Alvin@123",
+    "role": "student"
+  },
+  {
+    "name": "Jonah",
+    "email": "Richard@heraldcollege.edu.np",
+    "password": "Kibo@123",
+    "role": "student"
+  },
+  {
+    "name": "Erasmus",
+    "email": "Xenos@heraldcollege.edu.np",
+    "password": "Troy@123",
+    "role": "student"
+  },
+  {
+    "name": "Dylan",
+    "email": "Raphael@heraldcollege.edu.np",
+    "password": "Avram@123",
+    "role": "student"
+  },
+  {
+    "name": "Chaim",
+    "email": "Maxwell@heraldcollege.edu.np",
+    "password": "Jeremy@123",
+    "role": "student"
+  },
+  {
+    "name": "Lars",
+    "email": "Talon@heraldcollege.edu.np",
+    "password": "Colorado@123",
+    "role": "student"
+  },
+  {
+    "name": "Leo",
+    "email": "Geoffrey@heraldcollege.edu.np",
+    "password": "Kato@123",
+    "role": "student"
+  },
+  {
+    "name": "Ezekiel",
+    "email": "Lamar@heraldcollege.edu.np",
+    "password": "John@123",
+    "role": "student"
+  },
+  {
+    "name": "Clarke",
+    "email": "Steel@heraldcollege.edu.np",
+    "password": "Michael@123",
+    "role": "student"
+  },
+  {
+    "name": "Dieter",
+    "email": "Barrett@heraldcollege.edu.np",
+    "password": "Jesse@123",
+    "role": "student"
+  },
+  {
+    "name": "Timothy",
+    "email": "Owen@heraldcollege.edu.np",
+    "password": "Giacomo@123",
+    "role": "student"
+  },
+  {
+    "name": "Matthew",
+    "email": "Brendan@heraldcollege.edu.np",
+    "password": "Tad@12345689",
+    "role": "student"
+  },
+  {
+    "name": "Marvin",
+    "email": "Wesley@heraldcollege.edu.np",
+    "password": "Alvin@123",
+    "role": "student"
+  },
+  {
+    "name": "Timon",
+    "email": "Judah@heraldcollege.edu.np",
+    "password": "Jonah@123",
+    "role": "student"
+  },
+  {
+    "name": "Cole",
+    "email": "Ulysses@heraldcollege.edu.np",
+    "password": "Cain@123",
+    "role": "student"
+  },
+  {
+    "name": "Jarrod",
+    "email": "Valentine@heraldcollege.edu.np",
+    "password": "Lance@123",
+    "role": "student"
+  },
+  {
+    "name": "Dieter",
+    "email": "Fitzgerald@heraldcollege.edu.np",
+    "password": "Basil@123",
+    "role": "student"
+  },
+  {
+    "name": "Alec",
+    "email": "Colorado@heraldcollege.edu.np",
+    "password": "Vladimir@123",
+    "role": "student"
+  },
+  {
+    "name": "Merritt",
+    "email": "Jamal@heraldcollege.edu.np",
+    "password": "Wyatt@123",
+    "role": "student"
+  },
+  {
+    "name": "Jacob",
+    "email": "Slade@heraldcollege.edu.np",
+    "password": "Elliott@123",
+    "role": "student"
+  },
+  {
+    "name": "Kyle",
+    "email": "Cameron@heraldcollege.edu.np",
+    "password": "Bruce@123",
+    "role": "student"
+  },
+  {
+    "name": "Dillon",
+    "email": "Norman@heraldcollege.edu.np",
+    "password": "Oren@123",
+    "role": "student"
+  },
+  {
+    "name": "Bernard",
+    "email": "John@heraldcollege.edu.np",
+    "password": "Lester@123",
+    "role": "student"
+  },
+  {
+    "name": "Solomon",
+    "email": "Blaze@heraldcollege.edu.np",
+    "password": "Coloro@123",
+    "role": "student"
+  },
+  {
+    "name": "Edward",
+    "email": "Vladimir@heraldcollege.edu.np",
+    "password": "Jared@123",
+    "role": "student"
+  },
+  {
+    "name": "Julian",
+    "email": "Zachary@heraldcollege.edu.np",
+    "password": "Tucker@123",
+    "role": "student"
+  },
+  {
+    "name": "Sebastian",
+    "email": "Lev@heraldcollege.edu.np",
+    "password": "Brenden@123",
+    "role": "student"
+  },
+  {
+    "name": "Nero",
+    "email": "Tad@heraldcollege.edu.np",
+    "password": "Merritt@123",
+    "role": "student"
+  },
+  {
+    "name": "Tanner",
+    "email": "Dominic@heraldcollege.edu.np",
+    "password": "Talon@123",
+    "role": "student"
+  },
+  {
+    "name": "Bevis",
+    "email": "Nolan@heraldcollege.edu.np",
+    "password": "Abdul@123",
+    "role": "student"
+  },
+  {
+    "name": "Elvis",
+    "email": "Chaim@heraldcollege.edu.np",
+    "password": "Nathan@123",
+    "role": "student"
+  },
+  {
+    "name": "Rashad",
+    "email": "Quinn@heraldcollege.edu.np",
+    "password": "Griffin@123",
+    "role": "student"
+  },
+  {
+    "name": "Brock",
+    "email": "Brock@heraldcollege.edu.np",
+    "password": "Joshua@123",
+    "role": "student"
+  },
+  {
+    "name": "Mufutau",
+    "email": "Omar@heraldcollege.edu.np",
+    "password": "David@123",
+    "role": "student"
+  },
+  {
+    "name": "Oleg",
+    "email": "Kadeem@heraldcollege.edu.np",
+    "password": "Zachary@123",
+    "role": "student"
+  },
+  {
+    "name": "Carlos",
+    "email": "Elvis@heraldcollege.edu.np",
+    "password": "Stuart@123",
+    "role": "student"
+  },
+  {
+    "name": "Cole",
+    "email": "Kennan@heraldcollege.edu.np",
+    "password": "Kibo@123",
+    "role": "student"
+  },
+  {
+    "name": "Chadwick",
+    "email": "Cruz@heraldcollege.edu.np",
+    "password": "Jerome@123",
+    "role": "student"
+  },
+  {
+    "name": "Rahim",
+    "email": "Ethan@heraldcollege.edu.np",
+    "password": "Jin@123gfhjgh",
+    "role": "student"
+  },
+  {
+    "name": "Barry",
+    "email": "Plato@heraldcollege.edu.np",
+    "password": "Otto@123",
+    "role": "student"
+  },
+  {
+    "name": "Merritt",
+    "email": "Galvin@heraldcollege.edu.np",
+    "password": "Yuli@123",
+    "role": "student"
+  },
+  {
+    "name": "Samson",
+    "email": "Salvador@heraldcollege.edu.np",
+    "password": "Colin@123",
+    "role": "student"
+  },
+  {
+    "name": "Branden",
+    "email": "Wyatt@heraldcollege.edu.np",
+    "password": "Gary@123",
+    "role": "student"
+  },
+  {
+    "name": "Ivor",
+    "email": "Amal@heraldcollege.edu.np",
+    "password": "Xanthus@123",
+    "role": "student"
+  },
+  {
+    "name": "Reuben",
+    "email": "Colt@heraldcollege.edu.np",
+    "password": "Berk@123",
+    "role": "student"
+  },
+  {
+    "name": "Geoffrey",
+    "email": "Zephania@heraldcollege.edu.np",
+    "password": "Lucian@123",
+    "role": "student"
+  },
+  {
+    "name": "Dennis",
+    "email": "Hyatt@heraldcollege.edu.np",
+    "password": "Lewis@123",
+    "role": "student"
+  },
+  {
+    "name": "Cole",
+    "email": "Lyle@heraldcollege.edu.np",
+    "password": "Hamish@123",
+    "role": "student"
+  },
+  {
+    "name": "Dieter",
+    "email": "Garrett@heraldcollege.edu.np",
+    "password": "Mark@123",
+    "role": "student"
+  },
+  {
+    "name": "Orson",
+    "email": "Coloradoe@heraldcollege.edu.np",
+    "password": "Yardley@123",
+    "role": "student"
+  },
+  {
+    "name": "Griffith",
+    "email": "dormamu@heraldcollege.edu.np",
+    "password": "Wade@123",
+    "role": "student"
+  },
+  {
+    "name": "Baker",
+    "email": "Beck@heraldcollege.edu.np",
+    "password": "Magee@123",
+    "role": "student"
+  },
+  {
+    "name": "Todd",
+    "email": "Bert@heraldcollege.edu.np",
+    "password": "Galvin@123",
+    "role": "student"
+  },
+  {
+    "name": "Yasir",
+    "email": "Dillon@heraldcollege.edu.np",
+    "password": "Hashim@123",
+    "role": "student"
+  },
+  {
+    "name": "Abel",
+    "email": "Sawyer@heraldcollege.edu.np",
+    "password": "Marvin@123",
+    "role": "student"
+  },
+  {
+    "name": "Palmer",
+    "email": "Akeem@heraldcollege.edu.np",
+    "password": "Alfonso@123",
+    "role": "student"
+  },
+  {
+    "name": "Conan",
+    "email": "Sylvester@heraldcollege.edu.np",
+    "password": "Cole@123",
+    "role": "student"
+  },
+  {
+    "name": "Dillon",
+    "email": "Josiah@heraldcollege.edu.np",
+    "password": "Howard@123",
+    "role": "student"
+  },
+  {
+    "name": "Dolan",
+    "email": "Byron@heraldcollege.edu.np",
+    "password": "Zeus@123",
+    "role": "student"
+  },
+  {
+    "name": "Palmer",
+    "email": "Zane@heraldcollege.edu.np",
+    "password": "Ronan@123",
+    "role": "student"
+  },
+  {
+    "name": "Ali",
+    "email": "Nolani@heraldcollege.edu.np",
+    "password": "Keane@123",
+    "role": "student"
+  }
+]
