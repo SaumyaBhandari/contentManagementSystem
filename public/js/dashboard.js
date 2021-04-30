@@ -1,4 +1,5 @@
 import courseTemplate from './courseTemplate';
+import eventTemplate from './eventTemplate';
 import axios from 'axios';
 const showContent = (content) => {
   let dashBoardContainer = document.getElementById('dashBoardContainer');
@@ -33,6 +34,11 @@ const showContent = (content) => {
           alert(err.response.data.message);
         });
     });
+  } else if (content === 'event') {
+    const template = eventTemplate();
+    dashBoardContainer.innerHTML = '';
+    let node = document.createRange().createContextualFragment(template);
+    dashBoardContainer.appendChild(node);
   }
 };
 

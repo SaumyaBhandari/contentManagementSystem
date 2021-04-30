@@ -104,3 +104,28 @@ exports.isLoggedIn = async (req, res, next) => {
     return next();
   }
 };
+exports.logout = (req, res) => {
+  res.cookie('jwt', '', {
+    expires: new Date(Date.now() + 1000),
+    httpOnly: false,
+  });
+  res.status(200).render('success', {
+    message: 'logged out successfully',
+    redirectURL: '/',
+  });
+};
+
+exports.restrictTo = (...roles) => {
+  return (req, res, next) => {
+    // roles ['admin', 'lead-guide']. role='user'
+    console.log('from restrict function');
+    console.log(req.user);
+    if (!roles.includes(req.user.role)) {
+      return next(
+        new AppError('You do not have permission to perform this action', 403)
+      );
+    }
+
+    next();
+  };
+};

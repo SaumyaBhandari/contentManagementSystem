@@ -4,10 +4,16 @@
     <%- include('./head',{title:'HeraldCollege'}); %>
   </head>
   <body>
-    <div id="divid" data-message="<%=message%>"></div>
+    <div
+      id="divid"
+      data-urll="<%= redirectURL %>"
+      data-message="<%=message%>"
+    ></div>
     <script>
       alert(document.getElementById('divid').getAttribute('data-message'));
-      window.location.assign('/dashboard');
+      let urll = document.getElementById('divid').getAttribute('data-urll');
+
+      window.location.assign(`${urll}`);
     </script>
 
     <footer><%- include('./footer'); %></footer>

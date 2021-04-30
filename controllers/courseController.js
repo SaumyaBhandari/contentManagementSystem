@@ -33,7 +33,7 @@ exports.getCourses = async (req, res, next) => {
 };
 
 exports.addCourse = catchAsync(async (req, res, next) => {
-  console.log(req.body);
+  // console.log(req.body);
   // if ((req.body.year1, req.body.year2, req.body.year3)) {
   //   req.body.year1 = req.body.year1.split(',');
   //   req.body.year2 = req.body.year2.split(',');
@@ -41,11 +41,12 @@ exports.addCourse = catchAsync(async (req, res, next) => {
   // }
 
   const course = await Course.create(req.body);
-  console.log('course');
-
+  // console.log('course');
+  let redirectURL = `/courses/${course._id}`;
+  console.log(redirectURL);
   res.status(200).render('success', {
     message: 'course added successfully',
-    course,
+    redirectURL,
   });
 });
 
@@ -63,8 +64,10 @@ exports.updateCourse = catchAsync(async (req, res, next) => {
   );
   console.log('inside update course............');
   console.log(course);
+  let redirectURL = `/courses/${course._id}`;
   res.status(200).render('success', {
     message: 'course updated successfully',
+    redirectURL,
   });
 });
 

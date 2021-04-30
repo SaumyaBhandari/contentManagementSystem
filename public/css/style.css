@@ -15,7 +15,7 @@
   position: fixed;
   width: 20%;
   height: 100%;
-  background-color: #21b6a8;
+  background-color: #48b13e;
 }
 #sidebar a {
   color: white;
@@ -46,7 +46,7 @@
   margin: 3px;
 }
 #sidebar a:hover {
-  color: #21b6a8;
+  color: #48b13e;
 }
 #sidebar li:hover {
   background-color: white;
@@ -60,7 +60,7 @@
   margin-left: 25%;
 }
 h2 a {
-  color: #21b6a8;
+  color: #48b13e;
 }
 @media only screen and (max-width: 650px) {
   #sidebar {
@@ -107,9 +107,6 @@ th {
 
 /*..........Gallery.........*/
 
-/*.gallery{
-    margin:10px;
-}*/
 .gallery img {
   float: right;
   width: 400px;
@@ -168,6 +165,13 @@ th {
   background-attachment: fixed;
 
   height: 80vh;
+}
+.bgvdo {
+  background: rgba(0, 0, 0, 0.6) url('images/picture.JPG');
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100vh;
 }
 .btn {
   background-color: orange;

@@ -2,7 +2,7 @@ module.exports = (err, req, res, next) => {
   err.statusCode = err.statusCode || 500;
   err.status = err.status || 'error';
   console.log('status code is : ', err.statusCode);
-  console.log(err.message);
+  console.log(err);
   console.log(err.stackTrace);
 
   if (err.statusCode === 401) {
@@ -15,5 +15,6 @@ module.exports = (err, req, res, next) => {
     statusCode: err.statusCode,
     message: err.message,
     courses: undefined,
+    title: 'Error',
   });
 };

@@ -1977,6 +1977,27 @@ function getCourseTemplate() {
 
 var _default = getCourseTemplate;
 exports.default = _default;
+},{}],"eventTemplate.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+function eventTemplate() {
+  //   let events = document.getElementById('event').getAttribute('data-events');
+  var events = [1, 2, 3, 4];
+  console.log(events);
+  var eventCard = events.map(function (el) {
+    return "   <section class=\"container text-left\">\n    <div\n      class=\"card text-dark mb-3 font-weight-bold mt-2\"\n      style=\"max-width: 75%; float: right\"\n    >\n      <div\n        class=\"card-header\"\n        style=\"\n          background-color: #21b6a8;\n          color: white;\n          float: right;\n          max-height: 60px;\n        \"\n      >\n        <i class=\"fa fa-fw fa-bell\" color=\"white\"></i> Important Notice\n\n        <button\n          class=\"btn btn-danger text-white btn-sm\"\n          data-target=\"#mymodel2\"\n          data-toggle=\"modal\"\n          style=\"float: right; margin: 3px; width: 8%\"\n        >\n          <i class=\"fa fa-fw fa-times font-weight-bold\" color=\"white\"></i>\n        </button>\n        <div class=\"modal\" id=\"mymodel2\">\n          <div class=\"modal-dialog modal-dialog-centered\">\n            <div class=\"modal-content\">\n              <div class=\"modal-header\">\n                <h3 class=\"text-center text-dark\">Delete Events</h3>\n                <button type=\"button\" class=\"close\" data-dismiss=\"modal\">\n                  &times;\n                </button>\n              </div>\n\n              <div class=\"modal-body\">\n                <h5 class=\"text-dark text-center font-weight-bold\">\n                  Are you sure you want to delete the Event?\n                </h5>\n              </div>\n\n              <div class=\"modal-footer justify-content-center\">\n                <button class=\"btn btn-success\" style=\"width: 70px\">\n                  OK\n                </button>\n                <button\n                  class=\"btn btn-danger\"\n                  data-dismiss=\"modal\"\n                  style=\"width: 70px\"\n                >\n                  Cancel\n                </button>\n              </div>\n            </div>\n          </div>\n        </div>\n\n        <button\n          class=\"btn btn-success text-white btn-sm\"\n          data-target=\"#mymodel3\"\n          data-toggle=\"modal\"\n          style=\"float: right; margin: 3px; width: 8%\"\n        >\n          <i class=\"fa fa-fw fa-pencil font-weight-bold\" color=\"white\"></i>\n        </button>\n\n        <div class=\"modal\" id=\"mymodel3\">\n          <div class=\"modal-dialog modal-dialog-centered\">\n            <div class=\"modal-content\">\n              <div class=\"modal-header\">\n                <h3 class=\"text-center text-dark\">Edit Events</h3>\n                <button type=\"button\" class=\"close\" data-dismiss=\"modal\">\n                  &times;\n                </button>\n              </div>\n\n              <div class=\"modal-body\">\n                <form>\n                  <div class=\"form-group font-weight-bold\">\n                    <div class=\"nav-item dropdown\">\n                      <a\n                        class=\"nav-link dropdown-toggle\"\n                        href=\"#\"\n                        id=\"navbarDropdown\"\n                        role=\"button\"\n                        data-toggle=\"dropdown\"\n                        aria-haspopup=\"true\"\n                        aria-expanded=\"false\"\n                        style=\"color: #48b13e\"\n                      >\n                        <i class=\"fa fa-fw fa-bell\"></i> Important Notice\n                      </a>\n                      <div\n                        class=\"dropdown-menu\"\n                        aria-labelledby=\"navbarDropdown\"\n                      >\n                        <a class=\"dropdown-item\" href=\"#\">Academic</a>\n                        <a class=\"dropdown-item\" href=\"#\">Non Academic</a>\n                      </div>\n                    </div>\n\n                    <textarea form=\"form\" style=\"width: 50%; height: 40px\">\nScholarship Opportunities </textarea\n                    >\n                    <textarea form=\"form\" style=\"width: 90%; height: 90px\">\nStudents can check whether they have got/reimbursed the money or not from the official website of UP Scholarship. Students can check whether they have got/reimbursed the money or not from the official website of UP Scholarship. </textarea\n                    >\n\n                    <div>\n                      <img src=\"images/image.png\" alt=\"Image\" /><br />\n                      <button type=\"button\" class=\"add-image\">\n                        Edit image\n                      </button>\n                    </div>\n\n                    <div class=\"event-date mt-4 mb-4\">\n                      <label class=\"text-dark\">Event Date:</label>\n                      <input\n                        type=\"text\"\n                        size=\"30\"\n                        class=\"form-control\"\n                        id=\"datepickers\"\n                        style=\"width: 60%; float: right; margin-right: 15%\"\n                      />\n                    </div>\n\n                    <label class=\"text-dark\">Location:</label>\n                    <textarea\n                      form=\"form\"\n                      style=\"\n                        width: 60%;\n                        float: right;\n                        margin-right: 15%;\n                        height: 40px;\n                      \"\n                    >\nChabhil, Kathmandu </textarea\n                    >\n                  </div>\n                </form>\n              </div>\n\n              <div class=\"modal-footer justify-content-center\">\n                <button class=\"btn btn-success\" style=\"width: 70px\">\n                  Edit\n                </button>\n                <button\n                  class=\"btn btn-danger\"\n                  data-dismiss=\"modal\"\n                  style=\"width: 70px\"\n                >\n                  Cancel\n                </button>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n\n      <div class=\"card-body bg-light\">\n        <h5 class=\"card-title\">Scholarship opportunities</h5>\n        <p class=\"card-text\">\n          Students can check whether they have got/reimbursed the money or not\n          from the official website of UP Scholarship. Students can check\n          whether they have got/reimbursed the money or not from the official\n          website of UP Scholarship.\n        </p>\n      </div>\n    </div>\n  </section>";
+  });
+  var eventTemplate = "\n<div class=\"add-icon\">\n  <button\n    class=\"btn btn-secondary text-white btn-sm\"\n    data-target=\"#mymodel\"\n    data-toggle=\"modal\"\n    style=\"margin-left: 85%; width: 50px\"\n  >\n    Add\n  </button>\n\n  <div class=\"modal\" id=\"mymodel\">\n    <div class=\"modal-dialog modal-dialog-centered\">\n      <div class=\"modal-content\">\n        <div class=\"modal-header\">\n          <h3 class=\"text-center\">Add Events</h3>\n          <button type=\"button\" class=\"close\" data-dismiss=\"modal\">\n            &times;\n          </button>\n        </div>\n\n        <div class=\"modal-body\">\n          <form>\n            <div class=\"form-group font-weight-bold\">\n              <div class=\"nav-item dropdown\">\n                <a\n                  class=\"nav-link dropdown-toggle\"\n                  href=\"#\"\n                  id=\"navbarDropdown\"\n                  role=\"button\"\n                  data-toggle=\"dropdown\"\n                  aria-haspopup=\"true\"\n                  aria-expanded=\"false\"\n                  style=\"color: #48b13e\"\n                >\n                  <i class=\"fa fa-fw fa-bell\"></i> Important Notice\n                </a>\n                <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\n                  <a class=\"dropdown-item\" href=\"#\">Academic</a>\n                  <a class=\"dropdown-item\" href=\"#\">Non Academic</a>\n                </div>\n              </div>\n\n              <textarea\n                form=\"form\"\n                placeholder=\"TITLE OF EVENTS\"\n                style=\"width: 50%; height: 40px\"\n              ></textarea>\n              <textarea\n                form=\"form\"\n                placeholder=\"DESCRIPTION OF EVENTS\"\n                style=\"width: 90%; height: 70px\"\n              ></textarea>\n\n              <div>\n                <img src=\"images/image.png\" alt=\"Image\" /><br />\n                <button type=\"button\" class=\"add-image\">Add image</button>\n              </div>\n\n              <div class=\"event-date mt-4 mb-4\">\n                <label>Event Date:</label>\n                <input\n                  type=\"text\"\n                  size=\"30\"\n                  class=\"form-control\"\n                  id=\"datepicker\"\n                  style=\"width: 60%; float: right; margin-right: 15%\"\n                />\n              </div>\n\n              <label class=\"text-dark\">Location:</label>\n              <textarea\n                form=\"form\"\n                placeholder=\"Location of Events\"\n                style=\"\n                  width: 60%;\n                  float: right;\n                  margin-right: 15%;\n                  height: 40px;\n                \"\n              ></textarea>\n            </div>\n          </form>\n        </div>\n\n        <div class=\"modal-footer justify-content-center\">\n          <button class=\"btn btn-success\" style=\"width: 70px\">Add</button>\n          <button\n            class=\"btn btn-danger\"\n            data-dismiss=\"modal\"\n            style=\"width: 70px\"\n          >\n            Cancel\n          </button>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n".concat(eventCard, "\n");
+  return eventTemplate;
+}
+
+var _default = eventTemplate;
+exports.default = _default;
 },{}],"dashboard.js":[function(require,module,exports) {
 "use strict";
 
@@ -1986,6 +2007,8 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 var _courseTemplate = _interopRequireDefault(require("./courseTemplate"));
+
+var _eventTemplate = _interopRequireDefault(require("./eventTemplate"));
 
 var _axios = _interopRequireDefault(require("axios"));
 
@@ -2017,12 +2040,20 @@ var showContent = function showContent(content) {
         alert(err.response.data.message);
       });
     });
+  } else if (content === 'event') {
+    var _template = (0, _eventTemplate.default)();
+
+    dashBoardContainer.innerHTML = '';
+
+    var _node = document.createRange().createContextualFragment(_template);
+
+    dashBoardContainer.appendChild(_node);
   }
 };
 
 var _default = showContent;
 exports.default = _default;
-},{"./courseTemplate":"courseTemplate.js","axios":"../../node_modules/axios/index.js"}],"index.js":[function(require,module,exports) {
+},{"./courseTemplate":"courseTemplate.js","./eventTemplate":"eventTemplate.js","axios":"../../node_modules/axios/index.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _login = _interopRequireDefault(require("./login"));
@@ -2040,6 +2071,10 @@ if (dashboard) {
   document.getElementById('courses').addEventListener('click', function (e) {
     console.log('inside eventlistner');
     (0, _dashboard.default)('course');
+  });
+  document.getElementById('event').addEventListener('click', function (e) {
+    console.log('inside eventlistner');
+    (0, _dashboard.default)('event');
   });
 }
 
@@ -2080,7 +2115,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62514" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63309" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

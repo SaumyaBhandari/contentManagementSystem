@@ -152,9 +152,6 @@ th {
 .register:hover {
   color: #d9e3f1;
 }
-#spinner-grow {
-  display: none;
-}
 .home-content {
   display: flex;
   align-items: center;
@@ -172,7 +169,6 @@ th {
 
   height: 80vh;
 }
-
 .btn {
   background-color: orange;
   width: 40%;
@@ -240,5 +236,22 @@ th {
   }
   .home-content h3 {
     font-size: 15px;
+  }
+}
+
+/*............User Course............*/
+.first-column {
+  width: 500px;
+  height: auto;
+  float: right;
+}
+@media screen and (max-width: 768px) {
+  .first-column {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .first-column {
+    width: 80%;
   }
 }

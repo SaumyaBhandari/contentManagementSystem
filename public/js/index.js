@@ -11,6 +11,11 @@ if (dashboard) {
     console.log('inside eventlistner');
     showContent('course');
   });
+  document.getElementById('event').addEventListener('click', (e) => {
+    console.log('inside eventlistner');
+
+    showContent('event');
+  });
 }
 
 if (loginForm) {
