@@ -259,3 +259,31 @@ th {
     width: 80%;
   }
 }
+
+/*..............About Us Page...............*/
+.para {
+  width: 45%;
+}
+.side_img {
+  width: 40%;
+}
+.about_desc {
+  margin-top: 100px;
+  width: 70%;
+  margin-left: 15%;
+}
+.accordion img {
+  width: 99%;
+}
+@media screen and (max-width: 700px) {
+  .para {
+    width: 90%;
+  }
+  .side_img {
+    display: none;
+  }
+  .about_desc {
+    width: 90%;
+    margin-left: 5%;
+  }
+}

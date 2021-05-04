@@ -1,8 +1,98 @@
-exports.getEvents = (req, res, next) => {
-  res.locals.events = {
-    event1: 'this is event 1',
-    event2: 'this is event 3',
-    event4: 'this is event 5',
-  };
-  next();
+const Event = require('../models/eventModel');
+const multer = require('multer');
+
+const AppError = require('../utils/AppError');
+const catchAsync = require('../utils/catchAsync');
+
+// setting upload destination and renaming image
+const multerStorage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    console.log('...............setting storage ......................');
+    cb(null, 'public/images/events');
+  },
+  filename: (req, file, cb) => {
+    const ext = file.mimetype.split('/')[1];
+
+    cb(
+      null,
+      `event-${req.body.name.split(' ').join('-')}-${Date.now()}.${ext}`
+    );
+  },
+});
+
+//chek if uploaded file is an image
+const multerFilter = (req, file, cb) => {
+  console.log(
+    '................ inside multer filter ...............................'
+  );
+  if (file.mimetype.startsWith('image')) {
+    cb(null, true);
+  } else {
+    cb(new AppError('Please upload only images', 400), false);
+  }
 };
+
+const upload = multer({
+  storage: multerStorage,
+  fileFilter: multerFilter,
+});
+
+exports.uploadCoverPhoto = upload.array('photos');
+
+exports.getEvents = async (req, res, next) => {
+  try {
+    const events = await Event.find();
+
+    res.locals.events = events;
+    next();
+  } catch (err) {
+    res.locals.events = undefined;
+    next();
+  }
+};
+
+exports.addEvent = catchAsync(async (req, res, next) => {
+  // console.log(req.body);
+
+  if (req.files) {
+    req.body.photos = req.files.map((el) => el.filename);
+  }
+  const event = await Event.create(req.body);
+
+  let redirectURL = `/events/${event._id}`;
+
+  res.status(200).render('success', {
+    message: 'event added successfully',
+    redirectURL,
+  });
+});
+
+exports.getSingleEvent = catchAsync(async (req, res, next) => {
+  const event = await Event.findOne({ _id: req.params.id });
+  res.status(200).render('course', {
+    event,
+    title: event.name,
+  });
+});
+exports.updateEvent = catchAsync(async (req, res, next) => {
+  if (req.files.length > 0) {
+    console.log('..................... file is runnng ////////////////');
+    req.body.photos = req.files.map((el) => el.filename);
+  }
+
+  console.log(req.body);
+  const event = await Event.findOneAndUpdate({ _id: req.params.id }, req.body);
+
+  let redirectURL = `/events/${event._id}`;
+  res.status(200).render('success', {
+    message: 'event updated successfully',
+    redirectURL,
+  });
+});
+
+exports.deleteEvent = catchAsync(async (req, res, next) => {
+  await Event.findOneAndDelete({ _id: req.params.id });
+  res.status(200).json({
+    status: 'success',
+  });
+});

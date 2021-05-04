@@ -1,9 +1,18 @@
 function eventTemplate() {
-  //   let events = document.getElementById('event').getAttribute('data-events');
-  let events = [1, 2, 3, 4];
+  let events = JSON.parse(
+    document.getElementById('event').getAttribute('data-events')
+  );
+
   console.log(events);
 
   const eventCard = events.map((el) => {
+    let date = undefined;
+    if (el.startDate) {
+      const a = new Date(el.startDate);
+
+      date = a.toISOString().split('T')[0];
+    }
+
     return `   <section class="container text-left">
     <div
       class="card text-dark mb-3 font-weight-bold mt-2"
@@ -45,7 +54,7 @@ function eventTemplate() {
               </div>
 
               <div class="modal-footer justify-content-center">
-                <button class="btn btn-success" style="width: 70px">
+                <button class="btn btn-success" style="width: 70px" data-eventID = ${el._id} id = "deleteEventBtn">
                   OK
                 </button>
                 <button
@@ -80,95 +89,91 @@ function eventTemplate() {
               </div>
 
               <div class="modal-body">
-                <form>
-                  <div class="form-group font-weight-bold">
-                    <div class="nav-item dropdown">
-                      <a
-                        class="nav-link dropdown-toggle"
-                        href="#"
-                        id="navbarDropdown"
-                        role="button"
-                        data-toggle="dropdown"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                        style="color: #48b13e"
-                      >
-                        <i class="fa fa-fw fa-bell"></i> Important Notice
-                      </a>
-                      <div
-                        class="dropdown-menu"
-                        aria-labelledby="navbarDropdown"
-                      >
-                        <a class="dropdown-item" href="#">Academic</a>
-                        <a class="dropdown-item" href="#">Non Academic</a>
-                      </div>
-                    </div>
+              <form  method='POST' enctype= "multipart/form-data" id = "updateEventForm" action='/api/v1/events/update/${el._id}'>
+            <div class="form-group font-weight-bold">
+              <div class="nav-item dropdown">
+            
 
-                    <textarea form="form" style="width: 50%; height: 40px">
-Scholarship Opportunities </textarea
-                    >
-                    <textarea form="form" style="width: 90%; height: 90px">
-Students can check whether they have got/reimbursed the money or not from the official website of UP Scholarship. Students can check whether they have got/reimbursed the money or not from the official website of UP Scholarship. </textarea
-                    >
+                <select style="margin-bottom:20px" class=" nav-link dropdown-toggle " form = "updateEventForm" name = "noticeType" id="noticeType">
+                <i class="fa fa-fw fa-bell"></i>
+  <option value="Academic Notice">Academic Notice</option>
+  <option dropdown-item value="Non Academic Notice">Non Academic Notice</option>
 
-                    <div>
-                      <img src="images/image.png" alt="Image" /><br />
-                      <button type="button" class="add-image">
-                        Edit image
-                      </button>
-                    </div>
+</select>
 
-                    <div class="event-date mt-4 mb-4">
-                      <label class="text-dark">Event Date:</label>
-                      <input
-                        type="text"
-                        size="30"
-                        class="form-control"
-                        id="datepickers"
-                        style="width: 60%; float: right; margin-right: 15%"
-                      />
-                    </div>
 
-                    <label class="text-dark">Location:</label>
-                    <textarea
-                      form="form"
-                      style="
-                        width: 60%;
-                        float: right;
-                        margin-right: 15%;
-                        height: 40px;
-                      "
-                    >
-Chabhil, Kathmandu </textarea
-                    >
-                  </div>
+                
+              </div>
+              <input
+              form="updateEventForm"
+              name= "name"
+              value="${el.name}"
+              style="width: 50%; height: 40px"
+            ></input>
+            <textarea
+              form="updateEventForm"
+              name="description"
+              
+              style="width: 90%; height: 70px"
+            >${el.description}</textarea>
+             
+
+              <div>
+               
+                <input type="file" name="photos" multiple form = "updateEventForm" id="img"  accept="image/*">
+              </div>
+
+              <div class="event-date mt-4 mb-4">
+                <label>Event Date:</label>
+                <input
+                  type="date"
+                  size="30"
+                  name="startDate"
+                  class="form-control"
+                  value = "${date}"
+                  id="datepicker"
+                  style="width: 60%; float: right; margin-right: 15%"
+                />
+              </div>
+
+              <label class="text-dark">Location:</label>
+              <input
+              type="text"
+                
+            value="${el.location}"
+                name = "location"
+              
+                style="
+                  width: 60%;
+                  float: right;
+                  margin-right: 15%;
+                  height: 40px;
+                "
+              ></input>
+            </div> <div class="modal-footer justify-content-center">
+          <button class="btn btn-success" style="width: 70px">Edit</button>
+          <button
+            class="btn btn-danger"
+            data-dismiss="modal"
+            style="width: 70px"
+          >
+            Cancel
+          </button>
+        </div>
                 </form>
+               
               </div>
 
-              <div class="modal-footer justify-content-center">
-                <button class="btn btn-success" style="width: 70px">
-                  Edit
-                </button>
-                <button
-                  class="btn btn-danger"
-                  data-dismiss="modal"
-                  style="width: 70px"
-                >
-                  Cancel
-                </button>
-              </div>
+             
             </div>
           </div>
         </div>
       </div>
 
       <div class="card-body bg-light">
-        <h5 class="card-title">Scholarship opportunities</h5>
+        <h5 class="card-title">${el.name}</h5>
         <p class="card-text">
-          Students can check whether they have got/reimbursed the money or not
-          from the official website of UP Scholarship. Students can check
-          whether they have got/reimbursed the money or not from the official
-          website of UP Scholarship.
+          ${el.description}
         </p>
       </div>
     </div>
@@ -197,48 +202,46 @@ Chabhil, Kathmandu </textarea
         </div>
 
         <div class="modal-body">
-          <form>
+          <form  method='POST' enctype= "multipart/form-data" id = "addEventForm" action='/api/v1/events'>
             <div class="form-group font-weight-bold">
               <div class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbarDropdown"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                  style="color: #48b13e"
-                >
-                  <i class="fa fa-fw fa-bell"></i> Important Notice
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">Academic</a>
-                  <a class="dropdown-item" href="#">Non Academic</a>
-                </div>
+            
+
+                <select style="margin-bottom:20px" class=" nav-link dropdown-toggle " form = "addEventForm" name = "noticeType" id="noticeType">
+                <i class="fa fa-fw fa-bell"></i>
+  <option value="Academic Notice">Academic Notice</option>
+  <option dropdown-item value="Non Academic Notice">Non Academic Notice</option>
+
+</select>
+
+
+                
               </div>
 
-              <textarea
-                form="form"
+              <input
+                form="addEventForm"
+                name= "name"
                 placeholder="TITLE OF EVENTS"
                 style="width: 50%; height: 40px"
-              ></textarea>
+              ></input>
               <textarea
-                form="form"
+                form="addEventForm"
+                name="description"
                 placeholder="DESCRIPTION OF EVENTS"
                 style="width: 90%; height: 70px"
               ></textarea>
 
               <div>
-                <img src="images/image.png" alt="Image" /><br />
-                <button type="button" class="add-image">Add image</button>
+               
+                <input type="file" name="photos" multiple form = "addEventForm" id="img"  accept="image/*">
               </div>
 
               <div class="event-date mt-4 mb-4">
                 <label>Event Date:</label>
                 <input
-                  type="text"
+                  type="date"
                   size="30"
+                  name="startDate"
                   class="form-control"
                   id="datepicker"
                   style="width: 60%; float: right; margin-right: 15%"
@@ -246,21 +249,19 @@ Chabhil, Kathmandu </textarea
               </div>
 
               <label class="text-dark">Location:</label>
-              <textarea
-                form="form"
+              <input
+              type="text"
+                form="addEventForm"
                 placeholder="Location of Events"
+                name = "location"
                 style="
                   width: 60%;
                   float: right;
                   margin-right: 15%;
                   height: 40px;
                 "
-              ></textarea>
-            </div>
-          </form>
-        </div>
-
-        <div class="modal-footer justify-content-center">
+              ></input>
+            </div> <div class="modal-footer justify-content-center">
           <button class="btn btn-success" style="width: 70px">Add</button>
           <button
             class="btn btn-danger"
@@ -270,6 +271,10 @@ Chabhil, Kathmandu </textarea
             Cancel
           </button>
         </div>
+          </form>
+        </div>
+
+       
       </div>
     </div>
   </div>

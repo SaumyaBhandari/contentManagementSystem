@@ -7,13 +7,14 @@ const AppError = require('./utils/AppError');
 const morgan = require('morgan');
 const courseRoute = require('./routes/courseRoute');
 const userRoute = require('./routes/userRoute');
+const eventRoute = require('./routes/eventRoute');
 const errorHandler = require('./controllers/errorController');
 const authController = require('./controllers/authController');
 const viewRoutes = require('./routes/viewRoute');
 const cookieParser = require('cookie-parser');
 
 app.use(morgan('dev'));
-// app.use(bodyParser.json());
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
@@ -31,6 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', authController.isLoggedIn, viewRoutes);
 app.use('/api/v1/courses', courseRoute);
+app.use('/api/v1/events', eventRoute);
 
 app.use('/api/v1/users', userRoute);
 app.use('*', (req, res, next) => {
