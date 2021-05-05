@@ -5,7 +5,7 @@ function getCourseTemplate() {
   let courseCard = courses.map((el, index) => {
     return `	
     <td>
-    <div class="modal" id="mymodel2">
+    <div class="modal" id="mc${index}">
 	<div class="modal-dialog modal-dialog-centered">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -36,28 +36,28 @@ function getCourseTemplate() {
             </div>
 
             <div class="modal-body">
-            <form class="form-group font-weight-bold" method='POST' id = "updateCourseForm" action='/api/v1/courses/update/${el.courseID}'>
+            <form class="form-group font-weight-bold" method='POST' id = "updateCourseForm${index}" action='/api/v1/courses/update/${el.courseID}'>
             <label>Course Name:</label>
             <input type="text" style="width: 70%;float: right;"  name="name" value = '${el.name}'> <br>
             <label>Course Tag:</label>
             <input type="text" style="width: 70%;  float: right;" name="tag" value = '${el.tag}'>
             <label>Course Description:</label>
-            <textarea form="updateCourseForm" name="description"  style="width: 90%; height: 90px;">${el.description}</textarea>
+            <textarea form="updateCourseForm${index}" name="description"  style="width: 90%; height: 90px;">${el.description}</textarea>
             <label>Entry Requirement:</label>
-            <textarea  form="updateCourseForm" name = "entryRequirement" style="width: 90%; height: 90px;">${el.entryRequirement}</textarea>
+            <textarea  form="updateCourseForm${index}" name = "entryRequirement" style="width: 90%; height: 90px;">${el.entryRequirement}</textarea>
             
             <div class="row font-weight-bold">
             <div class="row1 text-center" style="width: 30%;">
             <label>Year 1</label>
-            <textarea form="updateCourseForm" name="year1"  style="width: 90%; height: 90px;">${el.year1}</textarea>
+            <textarea form="updateCourseForm${index}" name="year1"  style="width: 90%; height: 90px;">${el.year1}</textarea>
             </div>
             <div class="row2 text-center" style="width: 30%;">
             <label>Year 2</label>
-            <textarea form="updateCourseForm" name="year2" style="width: 90%; height: 90px;">${el.year2}</textarea>
+            <textarea form="updateCourseForm${index}" name="year2" style="width: 90%; height: 90px;">${el.year2}</textarea>
             </div>
             <div class="row3 text-center" style="width: 30%;">
             <label>Year 3</label>
-            <textarea form="updateCourseForm" name="year3"  style="width: 90%; height: 90px;">${el.year3}</textarea>
+            <textarea form="updateCourseForm${index}" name="year3"  style="width: 90%; height: 90px;">${el.year3}</textarea>
             
             </div>
         </div>
@@ -95,7 +95,7 @@ function getCourseTemplate() {
                                     
                                         <td>
                                         <div class="delete-icon">
-                                        <button class="btn btn-danger text-white" data-target="#mymodel2" data-toggle="modal" style="width: 70px;"> Delete </button>
+                                        <button class="btn btn-danger text-white" data-target="#mc${index}" data-toggle="modal" style="width: 70px;"> Delete </button>
                                         
                                         </div>
                                         </td>

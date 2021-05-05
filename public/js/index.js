@@ -7,6 +7,16 @@ const loginForm = document.getElementById('login-form');
 const dashboard = document.getElementById('dashboard');
 
 if (dashboard) {
+  document.getElementById('dashboardBtn').addEventListener('click', (e) => {
+    let dashBoardContainer = document.getElementById('dashBoardContainer');
+    dashBoardContainer.innerHTML = '';
+    let node = document
+      .createRange()
+      .createContextualFragment(
+        '<img src="/images/pic1.jpg" alt="" srcset="" />'
+      );
+    dashBoardContainer.appendChild(node);
+  });
   document.getElementById('courses').addEventListener('click', (e) => {
     console.log('inside eventlistner');
     showContent('course');
@@ -15,6 +25,11 @@ if (dashboard) {
     console.log('inside eventlistner');
 
     showContent('event');
+  });
+  document.getElementById('gallery').addEventListener('click', (e) => {
+    console.log('inside eventlistner');
+
+    showContent('gallery');
   });
 }
 
@@ -28,4 +43,23 @@ if (loginForm) {
 
     login(email, password);
   });
+}
+
+function deleteImage(imageID) {
+  imageID = deleteImageBtn.getAttribute('data-imageID');
+  axios({
+    method: 'DELETE',
+    url: '/api/v1/gallery/' + imageID,
+  })
+    .then((res) => {
+      if (res.data.status === 'success') {
+        console.log(res.data);
+        alert('image deleted successfully');
+
+        location.assign('/dashboard');
+      }
+    })
+    .catch((err) => {
+      alert(err.response.data.message);
+    });
 }

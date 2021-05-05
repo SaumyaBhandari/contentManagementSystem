@@ -5,32 +5,40 @@
   </head>
   <body>
     <%- include('./header'); %>
+    <div class="login-box">
+      <div class="login-container">
+        <h4 class="text-center display-5 text-uppercase" id="login text">
+          Log in
+        </h4>
+        <br /><br />
+        <form class="login-form form-group" id="login-form">
+          <label>Email</label>
+          <input
+            type="email"
+            class="form-control"
+            name="email"
+            required
+            id="email"
+            placeholder="enter your email"
+          />
+          <label>Password</label>
+          <input
+            type="password"
+            class="form-control"
+            name="password"
+            required
+            id="password"
+            placeholder="enter your password"
+          />
 
-    <form class="login-form form-group" id="login-form">
-      <label>Email</label>
-      <input
-        type="email"
-        class="form-control"
-        name="email"
-        required
-        id="email"
-        placeholder="enter your email"
-      />
-      <label>Password</label>
-      <input
-        type="password"
-        class="form-control"
-        name="password"
-        required
-        id="password"
-        placeholder="enter your password"
-      />
+          <div class="spinner-grow text-warning" id="spinner-grow"></div>
 
-      <div class="spinner-grow text-warning" id="spinner-grow"></div>
-
-      <button class="btn btn-warning btn-md" id="login-btn">Login</button>
-    </form>
+          <button class="btn btn-warning btn-md" id="login-btn">Login</button>
+        </form>
+      </div>
+    </div>
 
     <footer><%- include('./footer'); %></footer>
+    <script></script>
   </body>
 </html>

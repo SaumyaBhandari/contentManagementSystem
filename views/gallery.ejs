@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./head'); %>
+  </head>
+  <body>
+    <%- include('./header'); %>
+    <section class="container">
+      <div class="row">
+        <div class="gallery_user">
+
+          <% if (gallery)  {%>
+
+           
+
+
+            <% for(var i=0; i<gallery[0].images.length; i++) {%>
+
+                <a href="/images/gallery/<%= gallery[0].images[i] %>" data-lightbox="images"
+            ><img src="/images/gallery/<%= gallery[0].images[i] %>"
+          /></a>
+              
+            
+           <% } %> <%}%>
+
+        
+         
+        </div>
+      </div>
+    </section>
+
+    <footer><%- include('./footer'); %></footer>
+  </body>
+</html>

@@ -16,107 +16,85 @@
 			<button class="btn btn-success text-white btn-lg"> Button </button>
 		</div>
 	</div></div>
-
+ <br><br>
 	<section class="container courses text-left">
 		
-		<div class="row m-5">
+		 <div class="container">
+				<div class="d-flex">
+				  
+				  <hr class="my-auto flex-grow-1" />
+				  
+				  <div class="px-4 text-uppercase visit-text text-success" id="visit-text">
+			Course offerings
+		  </div>
+		  
+				  <hr class="my-auto flex-grow-1" />
+				</div>
+				<br />
+		  
+				<div class="card-columns justify-content-center">
 			
       <% for(var i=0; i < courses.length; i++) { %>
-        <div
-              class="col-lg-5 col-md-5 col-sm-5 col-10 d-block m-2"
-              style="border: 2px solid red"
-            >
-              <h2>Course Offering</h2>
-              <h5>Approved by: Ministry of Education</h5>
-              <p>
-      
-                <%= courses[i].name %><br />
-                <%= courses[i].description %>
-              </p>
-              <a href="/courses/<%=courses[i].id%>" class="btn btn-primary text-white btn-sm m-1">
-                View More
-              </a>
-               </div>
+		
+			  
+				  <div class="card">
+					<div class="card-header card-dark display-6 text-dark text-center">
+						<%= courses[i].name %>
+					</div>
+					<img src="./images/seeEverst.jpg" alt="" class="card-img-top" />
+					<div class="card-body">
+					  <div class="card-title text-center text-success display-1"><%= courses[i].tag %></div>
+					  <div class="card-subtitle text-muted"> Course info :</div>
+					  <p class="card-text">
+						<%= courses[i].description %>
+					  </p>
+					  <a href="/courses/<%=courses[i].id%>" class="btn btn-success btn-block">Read More </a>
+					</div>
+				  </div>
+		  
+			  
            <% } %>
-              
+              </div> 
 
-		</div>
+		
 	</section> 
+	<section class="container">
 
-	<section class="portfolio bg-light">
-		<div class="container text-left">
-			<h4>Extended Education Value Added Program</h4>
+		<a href = "/gallery" class="display-5 text-center text-success"><h4>Gallery</h4></a>
+		<div class="row">
+			<div class="gallery_user">
+	
+			  <% if (gallery)  {%>
+	
+			   
+	
+	
+				<% for(var i=0; i<gallery[0].images.length && i<6; i++) {%>
+	
+					<a href="/images/gallery/<%= gallery[0].images[i] %>" data-lightbox="images"
+				><img src="/images/gallery/<%= gallery[0].images[i] %>"
+			  /></a>
+				  
+				
+			   <% } %> <%}%>
+	
 			
-			<div class="row">
-				<div class="col-lg-5 col-md-5 col-sm-5 col-10 d-block m-auto">
-					<div class="about">
-						<h2> Learn more about Herald College</h2>
-						<p>Herald College Kathmandu provides the best UK university education at most affordable fees. It offers Bachelor Degrees in IT and Business in direct partnership with the University of Wolverhampton, UK. Programmes that Herald College Kathmandu offers are flexible and have always aimed to foster a broader based knowledge.
-						</p>
-					</div>
-				</div>
-				<div class="col-lg-5 col-md-5 col-sm-5 col-10 d-block m-auto">
-					<div class="about">
-						<img src="images/pic.jpg" style="width: 70%; height: auto;">
-					</div>
-				</div>
+			  
 			</div>
-		</div>
+			<a href="/gallery" class=" float-right ml-4 more-photos text-primary">More Photos</a>
+		  </div>
+		  <br>
+		  <br>
+		 
+
 	</section>
 
-	<section class="card-section">
-		<div class="card-group">
-		  <div class="card m-4">
-		    <img class="card-img-top" src="images/pic.jpg">
-		    <div class="card-body m-3">
-		      <h5 class="card-title">The key to self motivation</h5>
-		      <p class="card-text">Herald College Kathmandu provides the best UK university education at most affordable fees. It offers Bachelor Degrees in IT and Business in direct partnership with the University of Wolverhampton, UK. Programmes that Herald College Kathmandu offers are flexible and have always aimed to foster a broader based knowledge.</p>
-		    </div>
-		  </div>
-		  <div class="card m-4">
-		    <img class="card-img-top" src="images/pic.jpg">
-		    <div class="card-body m-3">
-		      <h5 class="card-title">The key to self motivation</h5>
-		      <p class="card-text">Herald College Kathmandu provides the best UK university education at most affordable fees. It offers Bachelor Degrees in IT and Business in direct partnership with the University of Wolverhampton, UK. Programmes that Herald College Kathmandu offers are flexible and have always aimed to foster a broader based knowledge.</p>
-		    </div>
-		  </div>
-		  <div class="card m-4">
-		    <img class="card-img-top" src="images/pic.jpg">
-		    <div class="card-body m-3">
-		      <h5 class="card-title">The key to self motivation</h5>
-		      <p class="card-text">Herald College Kathmandu provides the best UK university education at most affordable fees. It offers Bachelor Degrees in IT and Business in direct partnership with the University of Wolverhampton, UK. Programmes that Herald College Kathmandu offers are flexible and have always aimed to foster a broader based knowledge.</p>
-		    </div>
-		  </div>
-		</div>
-	</section>
+	
 
-	<section class="card-section">
-		<div class="card-group">
-		   
-		  <div class="card m-4">
-		    <div class="card-body m-3">
-		      <h5 class="card-title">About Us</h5>
-		      <p class="card-text">Herald College Kathmandu provides the best UK university education at most affordable fees. It offers Bachelor Degrees in IT and Business in direct partnership with the University of Wolverhampton, UK. Programmes that Herald College Kathmandu offers are flexible and have always aimed to foster a broader based knowledge.</p>
-		      <button class="btn btn-primary text-white btn-sm m-1"> View More </button>
-		    </div>
-		  </div>
 
-		  <div class="card m-4">
-		    <div class="card-body m-3">
-		      <h5 class="card-title">Implinks</h5>
-		      <p class="card-text">Herald College Kathmandu provides the best UK university education at most affordable fees. It offers Bachelor Degrees in IT and Business in direct partnership with the University of Wolverhampton, UK. Programmes that Herald College Kathmandu offers are flexible and have always aimed to foster a broader based knowledge.</p>
-		    </div>
-		  </div>
+	
 
-		  <div class="card m-4">
-		    <div class="card-body m-3">
-		      <h5 class="card-title">Course Offered</h5>
-		      <p class="card-text">Herald College Kathmandu provides the best UK university education at most affordable fees. It offers Bachelor Degrees in IT and Business in direct partnership with the University of Wolverhampton, UK. Programmes that Herald College Kathmandu offers are flexible and have always aimed to foster a broader based knowledge.</p>
-		      <button class="btn btn-primary text-white btn-sm m-1"> View More </button>
-		    </div>
-		  </div>
-		</div>
-	</section>
+
 
 
 

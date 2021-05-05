@@ -1,3 +1,5 @@
+const AppError = require('../utils/AppError');
+
 exports.getOverview = (req, res, next) => {
   console.log('in view controller ..............................');
   res.status(200).render('index', {
@@ -13,7 +15,11 @@ exports.login = (req, res, next) => {
 };
 
 exports.dashboard = (req, res, next) => {
-  res.status(200).render('dashboard', {
-    title: 'Dashboard',
-  });
+  try {
+    res.status(200).render('dashboard', {
+      title: 'Dashboard',
+    });
+  } catch (err) {
+    next(new AppError(err.message, 500));
+  }
 };

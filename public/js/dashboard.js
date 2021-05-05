@@ -1,5 +1,6 @@
 import courseTemplate from './courseTemplate';
 import eventTemplate from './eventTemplate';
+import galleryTemplate from './galleryTemplate';
 import axios from 'axios';
 const showContent = (content) => {
   let dashBoardContainer = document.getElementById('dashBoardContainer');
@@ -16,23 +17,26 @@ const showContent = (content) => {
 
     // getting id of course that needs to be deleted
     if (deleteCourseBtn) {
-      deleteCourseBtn.addEventListener('click', (e) => {
-        const courseID = deleteCourseBtn.getAttribute('data-courseid');
-        axios({
-          method: 'DELETE',
-          url: '/api/v1/courses/' + courseID,
-        })
-          .then((res) => {
-            if (res.data.status === 'success') {
-              console.log(res.data);
-              alert('course deleted successfully');
+      document.querySelectorAll('#deleteCourseBtn').forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+          const courseID = btn.getAttribute('data-courseID');
 
-              location.assign('/dashboard');
-            }
+          axios({
+            method: 'DELETE',
+            url: '/api/v1/courses/' + courseID,
           })
-          .catch((err) => {
-            alert(err.response.data.message);
-          });
+            .then((res) => {
+              if (res.data.status === 'success') {
+                console.log(res.data);
+                alert('course deleted successfully');
+
+                location.assign('/dashboard');
+              }
+            })
+            .catch((err) => {
+              alert(err.response.data.message);
+            });
+        });
       });
     }
   } else if (content === 'event') {
@@ -45,23 +49,58 @@ const showContent = (content) => {
 
     // getting id of course that needs to be deleted
     if (deleteEventBtn) {
-      deleteEventBtn.addEventListener('click', (e) => {
-        const eventID = deleteEventBtn.getAttribute('data-eventID');
-        axios({
-          method: 'DELETE',
-          url: '/api/v1/events/' + eventID,
-        })
-          .then((res) => {
-            if (res.data.status === 'success') {
-              console.log(res.data);
-              alert('event deleted successfully');
+      document.querySelectorAll('#deleteEventBtn').forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+          const eventID = btn.getAttribute('data-eventID');
 
-              location.assign('/dashboard');
-            }
+          axios({
+            method: 'DELETE',
+            url: '/api/v1/events/' + eventID,
           })
-          .catch((err) => {
-            alert(err.response.data.message);
-          });
+            .then((res) => {
+              if (res.data.status === 'success') {
+                console.log(res.data);
+                alert('event deleted successfully');
+
+                location.assign('/dashboard');
+              }
+            })
+            .catch((err) => {
+              alert(err.response.data.message);
+            });
+        });
+      });
+    }
+  } else if (content === 'gallery') {
+    const template = galleryTemplate();
+    dashBoardContainer.innerHTML = '';
+    let node = document.createRange().createContextualFragment(template);
+    dashBoardContainer.appendChild(node);
+
+    const deleteImageBtn = document.getElementById('deleteImageBtn');
+
+    // getting id of course that needs to be deleted
+    if (deleteImageBtn) {
+      document.querySelectorAll('#deleteImageBtn').forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+          const imageID = btn.getAttribute('data-imageID');
+
+          axios({
+            method: 'DELETE',
+            url: '/api/v1/gallery/' + imageID,
+          })
+            .then((res) => {
+              if (res.data.status === 'success') {
+                console.log(res.data);
+                alert('image deleted successfully');
+
+                location.assign('/dashboard');
+              }
+            })
+            .catch((err) => {
+              alert(err.response.data.message);
+            });
+        });
       });
     }
   }

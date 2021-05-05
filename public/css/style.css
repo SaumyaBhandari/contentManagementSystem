@@ -122,23 +122,6 @@ th {
 
 /*..............Home.............*/
 
-.logo {
-  width: 10%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.logo img {
-  border: 3px solid brown;
-  border-radius: 50%;
-}
-.top-navbar {
-  padding: 8px;
-  background-color: #48b13e;
-  width: 100%;
-  float: right;
-  text-align: right;
-}
 .login,
 .register {
   padding: 5px;
@@ -159,20 +142,14 @@ th {
 
   color: aliceblue;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.514), rgba(0, 0, 0, 0.534)),
-    url('../images/background.jpg');
+    url('/images/background.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
 
   height: 80vh;
 }
-.bgvdo {
-  background: rgba(0, 0, 0, 0.6) url('images/picture.JPG');
-  background-size: 100% 100%;
-  background-attachment: fixed;
-  width: 100%;
-  height: 100vh;
-}
+
 .btn {
   background-color: orange;
   width: 40%;
@@ -285,5 +262,92 @@ th {
   .about_desc {
     width: 90%;
     margin-left: 5%;
+  }
+}
+
+/*..............User Event.............*/
+
+.card-section {
+  margin-left: 15%;
+  margin-right: 15%;
+  text-align: justify;
+}
+.card-section img {
+  width: 94%;
+  height: auto;
+}
+
+@media screen and (max-width: 1200px) {
+  .card-section img {
+    width: 87%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .card-section {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card-section {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .card-section {
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+}
+
+/*................User Gallery Page................*/
+.gallery_user {
+  margin: 10px;
+}
+.gallery_user img {
+  padding: 15px;
+  width: 375px;
+  height: 300px;
+  transition: 1s;
+  cursor: pointer;
+}
+
+.gallery_user img:hover {
+  transform: scale(1.1);
+}
+
+@media screen and (max-width: 1400px) {
+  .gallery_user {
+    margin: 10px;
+  }
+  .gallery_user img {
+    width: 33%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .gallery_user {
+    margin: 8px;
+  }
+  .gallery_user img {
+    width: 49%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .gallery_user {
+    margin: 10px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .gallery_user {
+    margin-left: 7%;
+  }
+  .gallery_user img {
+    width: 100%;
+    height: auto;
   }
 }

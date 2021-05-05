@@ -1969,7 +1969,7 @@ exports.default = void 0;
 function getCourseTemplate() {
   var courses = JSON.parse(document.getElementById('courses').getAttribute('data-courses'));
   var courseCard = courses.map(function (el, index) {
-    return "\t\n    <td>\n    <div class=\"modal\" id=\"mymodel2\">\n\t<div class=\"modal-dialog modal-dialog-centered\">\n\t\t<div class=\"modal-content\">\n\t\t\t<div class=\"modal-header\">\n\t\t\t\t<h3 class=\"text-center\"> Delete Course</h3>\n\t\t\t\t<button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>\n\t\t\t</div>\n\t\t\t<div class=\"modal-body\">\n\t\t\t<h5>Are you sure you want to delete the course??</h5>\n\t\t\t</div>\n\t\t   \n\t\t\t<div class=\"modal-footer justify-content-center\">\n\t\t\t\t<button id=\"deleteCourseBtn\" data-courseid=".concat(el.courseID, " class=\"btn btn-success\" style=\"width: 70px;\">OK\n\t\t\t\t</button>\n\t\t\t\t<button class=\"btn btn-danger\"data-dismiss=\"modal\"style=\"width: 70px;\">Cancel\n\t\t\t\t</button>\n\t\t\t  \n\t\t\t</div>\n\t\t</div>\n\t</div>\n</div>\n          \n    <div class=\"modal\" id=\"mymodel").concat(index, "\">\n    <div class=\"modal-dialog modal-dialog-centered\">\n        <div class=\"modal-content\">\n            <div class=\"modal-header\">\n                <h3 class=\"text-center\"> Edit Course</h3>\n                <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>\n            </div>\n\n            <div class=\"modal-body\">\n            <form class=\"form-group font-weight-bold\" method='POST' id = \"updateCourseForm\" action='/api/v1/courses/update/").concat(el.courseID, "'>\n            <label>Course Name:</label>\n            <input type=\"text\" style=\"width: 70%;float: right;\"  name=\"name\" value = '").concat(el.name, "'> <br>\n            <label>Course Tag:</label>\n            <input type=\"text\" style=\"width: 70%;  float: right;\" name=\"tag\" value = '").concat(el.tag, "'>\n            <label>Course Description:</label>\n            <textarea form=\"updateCourseForm\" name=\"description\"  style=\"width: 90%; height: 90px;\">").concat(el.description, "</textarea>\n            <label>Entry Requirement:</label>\n            <textarea  form=\"updateCourseForm\" name = \"entryRequirement\" style=\"width: 90%; height: 90px;\">").concat(el.entryRequirement, "</textarea>\n            \n            <div class=\"row font-weight-bold\">\n            <div class=\"row1 text-center\" style=\"width: 30%;\">\n            <label>Year 1</label>\n            <textarea form=\"updateCourseForm\" name=\"year1\"  style=\"width: 90%; height: 90px;\">").concat(el.year1, "</textarea>\n            </div>\n            <div class=\"row2 text-center\" style=\"width: 30%;\">\n            <label>Year 2</label>\n            <textarea form=\"updateCourseForm\" name=\"year2\" style=\"width: 90%; height: 90px;\">").concat(el.year2, "</textarea>\n            </div>\n            <div class=\"row3 text-center\" style=\"width: 30%;\">\n            <label>Year 3</label>\n            <textarea form=\"updateCourseForm\" name=\"year3\"  style=\"width: 90%; height: 90px;\">").concat(el.year3, "</textarea>\n            \n            </div>\n        </div>\n        \n         <div class=\"modal-footer justify-content-center\">\n        <button class=\"btn btn-success\" type= \"submit\" style=\"width: 70px;\">OK\n        </button>\n        <button class=\"btn btn-danger\"data-dismiss=\"modal\"style=\"width: 70px;\">Cancel\n        </button>\n        \n        \n        \n            </div>\n</form>\n           \n        </div>\n    </div>\n</div>\n</td>\n                           \n                            <tr>\n                                <td>").concat(el.courseID, "</td>\n                                <td>").concat(el.name, "</td>\n                                <td>").concat(el.tag, "</td>\n                                    \n                                        <td><button class=\"btn btn-success text-white\" data-target=\"#mymodel").concat(index, "\" data-toggle=\"modal\" style=\"width: 70px;\"> Edit </button>\n                                        <div class=\"edit-icon\">\n                                        \n                                          </div>\n                                        </td>\n              \n                                  \n                                  \n              \n                                    \n                                        <td>\n                                        <div class=\"delete-icon\">\n                                        <button class=\"btn btn-danger text-white\" data-target=\"#mymodel2\" data-toggle=\"modal\" style=\"width: 70px;\"> Delete </button>\n                                        \n                                        </div>\n                                        </td>\n                                      \n                            </tr>\n                          \n                      \n                    \n                ");
+    return "\t\n    <td>\n    <div class=\"modal\" id=\"mc".concat(index, "\">\n\t<div class=\"modal-dialog modal-dialog-centered\">\n\t\t<div class=\"modal-content\">\n\t\t\t<div class=\"modal-header\">\n\t\t\t\t<h3 class=\"text-center\"> Delete Course</h3>\n\t\t\t\t<button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>\n\t\t\t</div>\n\t\t\t<div class=\"modal-body\">\n\t\t\t<h5>Are you sure you want to delete the course??</h5>\n\t\t\t</div>\n\t\t   \n\t\t\t<div class=\"modal-footer justify-content-center\">\n\t\t\t\t<button id=\"deleteCourseBtn\" data-courseid=").concat(el.courseID, " class=\"btn btn-success\" style=\"width: 70px;\">OK\n\t\t\t\t</button>\n\t\t\t\t<button class=\"btn btn-danger\"data-dismiss=\"modal\"style=\"width: 70px;\">Cancel\n\t\t\t\t</button>\n\t\t\t  \n\t\t\t</div>\n\t\t</div>\n\t</div>\n</div>\n          \n    <div class=\"modal\" id=\"mymodel").concat(index, "\">\n    <div class=\"modal-dialog modal-dialog-centered\">\n        <div class=\"modal-content\">\n            <div class=\"modal-header\">\n                <h3 class=\"text-center\"> Edit Course</h3>\n                <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>\n            </div>\n\n            <div class=\"modal-body\">\n            <form class=\"form-group font-weight-bold\" method='POST' id = \"updateCourseForm").concat(index, "\" action='/api/v1/courses/update/").concat(el.courseID, "'>\n            <label>Course Name:</label>\n            <input type=\"text\" style=\"width: 70%;float: right;\"  name=\"name\" value = '").concat(el.name, "'> <br>\n            <label>Course Tag:</label>\n            <input type=\"text\" style=\"width: 70%;  float: right;\" name=\"tag\" value = '").concat(el.tag, "'>\n            <label>Course Description:</label>\n            <textarea form=\"updateCourseForm").concat(index, "\" name=\"description\"  style=\"width: 90%; height: 90px;\">").concat(el.description, "</textarea>\n            <label>Entry Requirement:</label>\n            <textarea  form=\"updateCourseForm").concat(index, "\" name = \"entryRequirement\" style=\"width: 90%; height: 90px;\">").concat(el.entryRequirement, "</textarea>\n            \n            <div class=\"row font-weight-bold\">\n            <div class=\"row1 text-center\" style=\"width: 30%;\">\n            <label>Year 1</label>\n            <textarea form=\"updateCourseForm").concat(index, "\" name=\"year1\"  style=\"width: 90%; height: 90px;\">").concat(el.year1, "</textarea>\n            </div>\n            <div class=\"row2 text-center\" style=\"width: 30%;\">\n            <label>Year 2</label>\n            <textarea form=\"updateCourseForm").concat(index, "\" name=\"year2\" style=\"width: 90%; height: 90px;\">").concat(el.year2, "</textarea>\n            </div>\n            <div class=\"row3 text-center\" style=\"width: 30%;\">\n            <label>Year 3</label>\n            <textarea form=\"updateCourseForm").concat(index, "\" name=\"year3\"  style=\"width: 90%; height: 90px;\">").concat(el.year3, "</textarea>\n            \n            </div>\n        </div>\n        \n         <div class=\"modal-footer justify-content-center\">\n        <button class=\"btn btn-success\" type= \"submit\" style=\"width: 70px;\">OK\n        </button>\n        <button class=\"btn btn-danger\"data-dismiss=\"modal\"style=\"width: 70px;\">Cancel\n        </button>\n        \n        \n        \n            </div>\n</form>\n           \n        </div>\n    </div>\n</div>\n</td>\n                           \n                            <tr>\n                                <td>").concat(el.courseID, "</td>\n                                <td>").concat(el.name, "</td>\n                                <td>").concat(el.tag, "</td>\n                                    \n                                        <td><button class=\"btn btn-success text-white\" data-target=\"#mymodel").concat(index, "\" data-toggle=\"modal\" style=\"width: 70px;\"> Edit </button>\n                                        <div class=\"edit-icon\">\n                                        \n                                          </div>\n                                        </td>\n              \n                                  \n                                  \n              \n                                    \n                                        <td>\n                                        <div class=\"delete-icon\">\n                                        <button class=\"btn btn-danger text-white\" data-target=\"#mc").concat(index, "\" data-toggle=\"modal\" style=\"width: 70px;\"> Delete </button>\n                                        \n                                        </div>\n                                        </td>\n                                      \n                            </tr>\n                          \n                      \n                    \n                ");
   });
   var courseTemplate = "\t<div class=\"add-icon\">\n              <button class=\"btn btn-secondary text-white btn-sm\" data-target=\"#mymodel\" data-toggle=\"modal\" style=\"margin-left: 85%; width: 50px;\"> Add </button>\n          \n              <div class=\"modal\" id=\"mymodel\">\n                  <div class=\"modal-dialog modal-dialog-centered\">\n                      <div class=\"modal-content\">\n                          <div class=\"modal-header\">\n                              <h3 class=\"text-center\"> Add Course</h3>\n                              <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>\n                          </div>\n          \n                          <div class=\"modal-body\">\n                          <form method=\"POST\" id=\"addCourseForm\" action=\"/api/v1/courses\" >\n                                  <div class=\"form-group font-weight-bold\">\n                                      <label>Course Id:</label>\n                                      <input type=\"text\" required name=\"courseID\" style=\"width: 70%; float: right;\"> <br>\n                                      <label>Course Name:</label>\n                                      <input name=\"name\" type=\"text\" require style=\"width: 70%; float: right;\"> <br>\n                                      <label>Course Tag:</label>\n                                      <input name=\"tag\" type=\"text\" require style=\"width: 70%; float: right;\">\n                                  </div>\n                                  <div class=\"row font-weight-bold\">\n                                      <div class=\"row1 text-center\" style=\"width: 30%;\">\n                                      <label>Year 1</label>\n                                      <textarea form=\"addCourseForm\" name=\"year1\" style=\"width: 90%; height: 90px;\"></textarea>\n                                      </div>\n                                      <div class=\"row2 text-center\" style=\"width: 30%;\">\n                                      <label>Year 2</label>\n                                      <textarea form=\"addCourseForm\" name=\"year2\" style=\"width: 90%; height: 90px;\"></textarea>\n                                      </div>\n                                      <div class=\"row3 text-center\" style=\"width: 30%;\">\n                                      <label>Year 3</label>\n                                      <textarea form=\"addCourseForm\" name=\"year3\" style=\"width: 90%; height: 90px;\"></textarea>\n                                      \n                                      </div>\n                                  </div>\n                               <div class=\"modal-footer justify-content-center\">\n                              <button type=\"submit\" class=\"btn btn-success\" style=\"width: 70px;\">Adddd\n                              </button>\n                              <button class=\"btn btn-danger\" data-dismiss=\"modal\" style=\"width: 70px;\">Cancel\n                              </button>\n                          </div>\n                          \n          \n                         \n          </form></div>\n                      </div>\n                  </div>\n              </div>\n          </div>\n          \n          \n          \n          \n              <section class=\"container text-left\">\n                  <div class=\"row\">\n                  <div class=\"col-lg-12 col-md-12 col-sm-12 col-12 d-block\">\n                  <table style=\"font-weight: bold;\">\n                  <tr>\n                  <th>Course id</th>\n                  <th>Course name</th>\n                  <th>Course tag</th>\n                  <th>Edit</th>\n                  <th>Delete</th>\n              </tr>\n                      ".concat(courseCard, "\n\n                      </table>\n                      </div>\n                  </div>\n              </section>");
   return courseTemplate;
@@ -1988,7 +1988,7 @@ exports.default = void 0;
 function eventTemplate() {
   var events = JSON.parse(document.getElementById('event').getAttribute('data-events'));
   console.log(events);
-  var eventCard = events.map(function (el) {
+  var eventCard = events.map(function (el, index) {
     var date = undefined;
 
     if (el.startDate) {
@@ -1996,13 +1996,34 @@ function eventTemplate() {
       date = a.toISOString().split('T')[0];
     }
 
-    return "   <section class=\"container text-left\">\n    <div\n      class=\"card text-dark mb-3 font-weight-bold mt-2\"\n      style=\"max-width: 75%; float: right\"\n    >\n      <div\n        class=\"card-header\"\n        style=\"\n          background-color: #21b6a8;\n          color: white;\n          float: right;\n          max-height: 60px;\n        \"\n      >\n        <i class=\"fa fa-fw fa-bell\" color=\"white\"></i> Important Notice\n\n        <button\n          class=\"btn btn-danger text-white btn-sm\"\n          data-target=\"#mymodel2\"\n          data-toggle=\"modal\"\n          style=\"float: right; margin: 3px; width: 8%\"\n        >\n          <i class=\"fa fa-fw fa-times font-weight-bold\" color=\"white\"></i>\n        </button>\n        <div class=\"modal\" id=\"mymodel2\">\n          <div class=\"modal-dialog modal-dialog-centered\">\n            <div class=\"modal-content\">\n              <div class=\"modal-header\">\n                <h3 class=\"text-center text-dark\">Delete Events</h3>\n                <button type=\"button\" class=\"close\" data-dismiss=\"modal\">\n                  &times;\n                </button>\n              </div>\n\n              <div class=\"modal-body\">\n                <h5 class=\"text-dark text-center font-weight-bold\">\n                  Are you sure you want to delete the Event?\n                </h5>\n              </div>\n\n              <div class=\"modal-footer justify-content-center\">\n                <button class=\"btn btn-success\" style=\"width: 70px\" data-eventID = ".concat(el._id, " id = \"deleteEventBtn\">\n                  OK\n                </button>\n                <button\n                  class=\"btn btn-danger\"\n                  data-dismiss=\"modal\"\n                  style=\"width: 70px\"\n                >\n                  Cancel\n                </button>\n              </div>\n            </div>\n          </div>\n        </div>\n\n        <button\n          class=\"btn btn-success text-white btn-sm\"\n          data-target=\"#mymodel3\"\n          data-toggle=\"modal\"\n          style=\"float: right; margin: 3px; width: 8%\"\n        >\n          <i class=\"fa fa-fw fa-pencil font-weight-bold\" color=\"white\"></i>\n        </button>\n\n        <div class=\"modal\" id=\"mymodel3\">\n          <div class=\"modal-dialog modal-dialog-centered\">\n            <div class=\"modal-content\">\n              <div class=\"modal-header\">\n                <h3 class=\"text-center text-dark\">Edit Events</h3>\n                <button type=\"button\" class=\"close\" data-dismiss=\"modal\">\n                  &times;\n                </button>\n              </div>\n\n              <div class=\"modal-body\">\n              <form  method='POST' enctype= \"multipart/form-data\" id = \"updateEventForm\" action='/api/v1/events/update/").concat(el._id, "'>\n            <div class=\"form-group font-weight-bold\">\n              <div class=\"nav-item dropdown\">\n            \n\n                <select style=\"margin-bottom:20px\" class=\" nav-link dropdown-toggle \" form = \"updateEventForm\" name = \"noticeType\" id=\"noticeType\">\n                <i class=\"fa fa-fw fa-bell\"></i>\n  <option value=\"Academic Notice\">Academic Notice</option>\n  <option dropdown-item value=\"Non Academic Notice\">Non Academic Notice</option>\n\n</select>\n\n\n                \n              </div>\n              <input\n              form=\"updateEventForm\"\n              name= \"name\"\n              value=\"").concat(el.name, "\"\n              style=\"width: 50%; height: 40px\"\n            ></input>\n            <textarea\n              form=\"updateEventForm\"\n              name=\"description\"\n              \n              style=\"width: 90%; height: 70px\"\n            >").concat(el.description, "</textarea>\n             \n\n              <div>\n               \n                <input type=\"file\" name=\"photos\" multiple form = \"updateEventForm\" id=\"img\"  accept=\"image/*\">\n              </div>\n\n              <div class=\"event-date mt-4 mb-4\">\n                <label>Event Date:</label>\n                <input\n                  type=\"date\"\n                  size=\"30\"\n                  name=\"startDate\"\n                  class=\"form-control\"\n                  value = \"").concat(date, "\"\n                  id=\"datepicker\"\n                  style=\"width: 60%; float: right; margin-right: 15%\"\n                />\n              </div>\n\n              <label class=\"text-dark\">Location:</label>\n              <input\n              type=\"text\"\n                \n            value=\"").concat(el.location, "\"\n                name = \"location\"\n              \n                style=\"\n                  width: 60%;\n                  float: right;\n                  margin-right: 15%;\n                  height: 40px;\n                \"\n              ></input>\n            </div> <div class=\"modal-footer justify-content-center\">\n          <button class=\"btn btn-success\" style=\"width: 70px\">Edit</button>\n          <button\n            class=\"btn btn-danger\"\n            data-dismiss=\"modal\"\n            style=\"width: 70px\"\n          >\n            Cancel\n          </button>\n        </div>\n                </form>\n               \n              </div>\n\n             \n            </div>\n          </div>\n        </div>\n      </div>\n\n      <div class=\"card-body bg-light\">\n        <h5 class=\"card-title\">").concat(el.name, "</h5>\n        <p class=\"card-text\">\n          ").concat(el.description, "\n        </p>\n      </div>\n    </div>\n  </section>");
+    return "   <section class=\"container text-left\">\n    <div\n      class=\"card text-dark mb-3 font-weight-bold mt-2\"\n      style=\"max-width: 75%; float: right\"\n    >\n      <div\n        class=\"card-header\"\n        style=\"\n          background-color: #21b6a8;\n          color: white;\n          float: right;\n          max-height: 60px;\n        \"\n      >\n        <i class=\"fa fa-fw fa-bell\" color=\"white\"></i> ".concat(el.noticeType, "\n\n        <button\n          class=\"btn btn-danger text-white btn-md\"\n          data-target=\"#delete").concat(index, "\"\n          data-toggle=\"modal\"\n          style=\"float: right; margin: 3px; width: 8%\"\n        >\n          <i class=\"fa fa-fw fa-times font-weight-bold\" color=\"white\"></i>\n        </button>\n        <div class=\"modal\" id=\"delete").concat(index, "\">\n          <div class=\"modal-dialog modal-dialog-centered\">\n            <div class=\"modal-content\">\n              <div class=\"modal-header\">\n                <h3 class=\"text-center text-dark\">Delete Events</h3>\n                <button type=\"button\" class=\"close\" data-dismiss=\"modal\">\n                  &times;\n                </button>\n              </div>\n\n              <div class=\"modal-body\">\n                <h5 class=\"text-dark text-center font-weight-bold\">\n                  Are you sure you want to delete the Event?\n                </h5>\n              </div>\n\n              <div class=\"modal-footer justify-content-center\">\n                <button class=\"btn btn-success\"  data-eventID = ").concat(el._id, " id = \"deleteEventBtn\">\n                  OK\n                </button>\n                <button\n                  class=\"btn btn-danger\"\n                  data-dismiss=\"modal\"\n                  \n                >\n                  Cancel\n                </button>\n              </div>\n            </div>\n          </div>\n        </div>\n\n        <button\n          class=\"btn btn-success text-white btn-md\"\n          data-target=\"#edit").concat(index, "\"\n          data-toggle=\"modal\"\n          style=\"float: right; margin: 3px; width: 8%\"\n        >\n        <i class=\"fas fa-pencil-alt\"></i>\n        </button>\n\n        <div class=\"modal\" id=\"edit").concat(index, "\">\n          <div class=\"modal-dialog modal-dialog-centered\">\n            <div class=\"modal-content\">\n              <div class=\"modal-header\">\n                <h3 class=\"text-center text-dark\">Edit Event</h3>\n                <button type=\"button\" class=\"close\" data-dismiss=\"modal\">\n                  &times;\n                </button>\n              </div>\n\n              <div class=\"modal-body\">\n              <form  method='POST' enctype= \"multipart/form-data\" id = \"updateEventForm").concat(index, "\" action='/api/v1/events/update/").concat(el._id, "'>\n            <div class=\"form-group font-weight-bold\">\n              <div class=\"nav-item dropdown\">\n            \n\n                <select style=\"margin-bottom:20px\" class=\" nav-link dropdown-toggle \"  name = \"noticeType\" id=\"noticeType\">\n                <i class=\"fa fa-fw fa-bell\"></i>\n  <option value=\"Academic Notice\">Academic Notice</option>\n  <option dropdown-item value=\"Non Academic Notice\">Non Academic Notice</option>\n\n</select>\n\n\n                \n              </div>\n              <input\n              form=\"updateEventForm").concat(index, "\"\n              name= \"name\"\n              value=\"").concat(el.name, "\"\n              style=\"width: 50%; height: 40px\"\n            ></input>\n            <textarea\n              form=\"updateEventForm").concat(index, "\"\n              name=\"description\"\n              \n              style=\"width: 90%; height: 70px\"\n            >").concat(el.description, "</textarea>\n             \n\n              <div>\n              <img style=\"width:200px;height:200px;\" src=\"/images/events/").concat(el.coverPhoto, "\" alt=\"img\" >\n                <input type=\"file\" name=\"coverPhoto\" form = \"updateEventForm").concat(index, "\" id=\"img\"  accept=\"image/*\">\n              </div>\n\n              <div class=\"event-date mt-4 mb-4\">\n                <label>Event Date:</label>\n                <input\n                  type=\"date\"\n                  size=\"30\"\n                  name=\"startDate\"\n                  class=\"form-control\"\n                  value = \"").concat(date, "\"\n                  id=\"datepicker\"\n                  style=\"width: 60%; float: right; margin-right: 15%\"\n                />\n              </div>\n\n              <label class=\"text-dark\">Location:</label>\n              <input\n              type=\"text\"\n                \n            value=\"").concat(el.location, "\"\n                name = \"location\"\n              \n                style=\"\n                  width: 60%;\n                  float: right;\n                  margin-right: 15%;\n                  height: 40px;\n                \"\n              ></input>\n            </div> <div class=\"modal-footer justify-content-center\">\n          <button class=\"btn btn-success\" >Edit</button>\n          <button\n            class=\"btn btn-danger\"\n            data-dismiss=\"modal\"\n            \n          >\n            Cancel\n          </button>\n        </div>\n                </form>\n               \n              </div>\n\n             \n            </div>\n          </div>\n        </div>\n      </div>\n\n      <div class=\"card-body bg-light\">\n        <h5 class=\"card-title\">").concat(el.name, "</h5>\n        <p class=\"card-text\">\n          ").concat(el.description, "\n        </p>\n      </div>\n    </div>\n  </section>");
   });
-  var eventTemplate = "\n<div class=\"add-icon\">\n  <button\n    class=\"btn btn-secondary text-white btn-sm\"\n    data-target=\"#mymodel\"\n    data-toggle=\"modal\"\n    style=\"margin-left: 85%; width: 50px\"\n  >\n    Add\n  </button>\n\n  <div class=\"modal\" id=\"mymodel\">\n    <div class=\"modal-dialog modal-dialog-centered\">\n      <div class=\"modal-content\">\n        <div class=\"modal-header\">\n          <h3 class=\"text-center\">Add Events</h3>\n          <button type=\"button\" class=\"close\" data-dismiss=\"modal\">\n            &times;\n          </button>\n        </div>\n\n        <div class=\"modal-body\">\n          <form  method='POST' enctype= \"multipart/form-data\" id = \"addEventForm\" action='/api/v1/events'>\n            <div class=\"form-group font-weight-bold\">\n              <div class=\"nav-item dropdown\">\n            \n\n                <select style=\"margin-bottom:20px\" class=\" nav-link dropdown-toggle \" form = \"addEventForm\" name = \"noticeType\" id=\"noticeType\">\n                <i class=\"fa fa-fw fa-bell\"></i>\n  <option value=\"Academic Notice\">Academic Notice</option>\n  <option dropdown-item value=\"Non Academic Notice\">Non Academic Notice</option>\n\n</select>\n\n\n                \n              </div>\n\n              <input\n                form=\"addEventForm\"\n                name= \"name\"\n                placeholder=\"TITLE OF EVENTS\"\n                style=\"width: 50%; height: 40px\"\n              ></input>\n              <textarea\n                form=\"addEventForm\"\n                name=\"description\"\n                placeholder=\"DESCRIPTION OF EVENTS\"\n                style=\"width: 90%; height: 70px\"\n              ></textarea>\n\n              <div>\n               \n                <input type=\"file\" name=\"photos\" multiple form = \"addEventForm\" id=\"img\"  accept=\"image/*\">\n              </div>\n\n              <div class=\"event-date mt-4 mb-4\">\n                <label>Event Date:</label>\n                <input\n                  type=\"date\"\n                  size=\"30\"\n                  name=\"startDate\"\n                  class=\"form-control\"\n                  id=\"datepicker\"\n                  style=\"width: 60%; float: right; margin-right: 15%\"\n                />\n              </div>\n\n              <label class=\"text-dark\">Location:</label>\n              <input\n              type=\"text\"\n                form=\"addEventForm\"\n                placeholder=\"Location of Events\"\n                name = \"location\"\n                style=\"\n                  width: 60%;\n                  float: right;\n                  margin-right: 15%;\n                  height: 40px;\n                \"\n              ></input>\n            </div> <div class=\"modal-footer justify-content-center\">\n          <button class=\"btn btn-success\" style=\"width: 70px\">Add</button>\n          <button\n            class=\"btn btn-danger\"\n            data-dismiss=\"modal\"\n            style=\"width: 70px\"\n          >\n            Cancel\n          </button>\n        </div>\n          </form>\n        </div>\n\n       \n      </div>\n    </div>\n  </div>\n</div>\n".concat(eventCard, "\n");
+  var eventTemplate = "\n<div class=\"add-icon\">\n  <button\n    class=\"btn btn-secondary text-white btn-md\"\n    data-target=\"#mymodel\"\n    data-toggle=\"modal\"\n    style=\"margin-left: 85%; width: 50px\"\n  >\n    Add\n  </button>\n\n  <div class=\"modal\" id=\"mymodel\">\n    <div class=\"modal-dialog modal-dialog-centered\">\n      <div class=\"modal-content\">\n        <div class=\"modal-header\">\n          <h3 class=\"text-center\">Add Events</h3>\n          <button type=\"button\" class=\"close\" data-dismiss=\"modal\">\n            &times;\n          </button>\n        </div>\n\n        <div class=\"modal-body\">\n          <form  method='POST' enctype= \"multipart/form-data\" id = \"addEventForm\" action='/api/v1/events'>\n            <div class=\"form-group font-weight-bold\">\n              <div class=\"nav-item dropdown\">\n            \n\n                <select style=\"margin-bottom:20px\" class=\" nav-link dropdown-toggle \" form = \"addEventForm\" name = \"noticeType\" id=\"noticeType\">\n                <i class=\"fa fa-fw fa-bell\"></i>\n  <option value=\"Academic Notice\">Academic Notice</option>\n  <option dropdown-item value=\"Non Academic Notice\">Non Academic Notice</option>\n\n</select>\n\n\n                \n              </div>\n\n              <input\n                form=\"addEventForm\"\n                name= \"name\"\n                placeholder=\"TITLE OF EVENTS\"\n                style=\"width: 50%; height: 40px\"\n              ></input>\n              <textarea\n                form=\"addEventForm\"\n                name=\"description\"\n                placeholder=\"DESCRIPTION OF EVENTS\"\n                style=\"width: 90%; height: 70px\"\n              ></textarea>\n\n              <div>\n               \n                <input type=\"file\" name=\"coverPhoto\" form = \"addEventForm\" id=\"img\"  accept=\"image/*\">\n              </div>\n\n              <div class=\"event-date mt-4 mb-4\">\n                <label>Event Date:</label>\n                <input\n                  type=\"date\"\n                  size=\"30\"\n                  name=\"startDate\"\n                  class=\"form-control\"\n                  id=\"datepicker\"\n                  style=\"width: 60%; float: right; margin-right: 15%\"\n                />\n              </div>\n\n              <label class=\"text-dark\">Location:</label>\n              <input\n              type=\"text\"\n                form=\"addEventForm\"\n                placeholder=\"Location of Events\"\n                name = \"location\"\n                style=\"\n                  width: 60%;\n                  float: right;\n                  margin-right: 15%;\n                  height: 40px;\n                \"\n              ></input>\n            </div> <div class=\"modal-footer justify-content-center\">\n          <button class=\"btn btn-success\" >Add</button>\n          <button\n            class=\"btn btn-danger\"\n            data-dismiss=\"modal\"\n            \n          >\n            Cancel\n          </button>\n        </div>\n          </form>\n        </div>\n\n       \n      </div>\n    </div>\n  </div>\n</div>\n".concat(eventCard, "\n");
   return eventTemplate;
 }
 
 var _default = eventTemplate;
+exports.default = _default;
+},{}],"galleryTemplate.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+function galleryTemplate() {
+  var gallery = JSON.parse(document.getElementById('gallery').getAttribute('data-gallery'));
+  console.log(gallery);
+  var galleryCard;
+  galleryCard = gallery[0].images.map(function (el, index) {
+    return "   <div class=\"col-lg-6 col-md-6 col-12\">\n    <div class=\"card m-2\">\n      <a href=\"images/img1.jpg\" data-lightbox=\"images\"\n        ><img\n          class=\"card-img-top\"\n          src=\"images/gallery/".concat(el, "\"\n          alt=\"image\"\n          style=\"height: 250px\"\n      /></a>\n      <div class=\"card-body m-1\">\n        <lutton\n         \n          data-target=\"#mymodel1\"\n          data-toggle=\"modal\"\n          \n        >\n          \n        </lutton>\n\n        <div class=\"modal\" id=\"mymodel1\">\n          <div class=\"modal-dialog modal-dialog-centered\">\n            <div class=\"modal-content\">\n              <div class=\"modal-header\">\n                <h3 class=\"text-center id = \"Edit Photos\"></h3>\n                <button\n                  type=\"button\"\n                  class=\"close\"\n                  data-dismiss=\"modal\"\n                >\n                  &times;\n                </button>\n              </div>\n\n            \n\n              <div class=\"modal-footer justify-content-center\">\n                <button class=\"btn btn-success\" >\n                  Edit\n                </button>\n                <button\n                  class=\"btn btn-danger\"\n                  data-dismiss=\"modal\"\n                  \n                >\n                  Cancel\n                </button>\n              </div>\n            </div>\n          </div>\n        </div>\n\n        <button\n          class=\"btn btn-danger text-white float-right mr-3\"\n          data-target=\"#mk").concat(index, "\"\n          data-toggle=\"modal\"\n          \n        >\n          Delete\n        </button>\n        <div class=\"modal\" id=\"mk").concat(index, "\">\n          <div class=\"modal-dialog modal-dialog-centered\">\n            <div class=\"modal-content\">\n              <div class=\"modal-header\">\n                <h3 class=\"text-center\">Delete Photo</h3>\n                <button\n                  type=\"button\"\n                  class=\"close\"\n                  data-dismiss=\"modal\"\n                > \n                  &times;\n                </button>\n              </div>\n              <div class=\"modal-body\">\n                <h5>Are you sure you want to delete the Photo??</h5>\n              </div>\n              <div class=\"modal-footer justify-content-center\">\n                <button type=\"submit\" id=\"deleteImageBtn\"  data-imageID=\"").concat(el, "\" class=\"btn btn-success\" >\n                  OK\n                </button>\n                <button\n                  class=\"btn btn-danger\"\n                  data-dismiss=\"modal\"\n                  \n                >\n                  Cancel\n                </button>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>  ");
+  });
+  var galleryTemplate = "\n\n    <div class=\"add-icon\">\n    <button\n      class=\"btn btn-secondary text-white btn-sm\"\n      data-target=\"#mymodel\"\n      data-toggle=\"modal\"\n      style=\"margin-left: 85%; width: 50px\"\n    >\n      Add\n    </button>\n\n    <div class=\"modal\" id=\"mymodel\">\n      <div class=\"modal-dialog modal-dialog-centered\">\n        <div class=\"modal-content\">\n          <div class=\"modal-header\">\n            <h3 class=\"text-center\">Add Photos</h3>\n            <button type=\"button\" class=\"close\" data-dismiss=\"modal\">\n              &times;\n            </button>\n          </div>\n\n          <div class=\"modal-body\">\n          <form  method='POST' enctype= \"multipart/form-data\" id = \"updateGalleryForm\" action='/api/v1/gallery'>\n              <div class=\"form-group font-weight-bold\">\n                <div>\n                  \n                  <input type=\"file\" required multiple name=\"images\"  id=\"img\"  accept=\"image/*\">\n                  \n                </div>\n              </div>\n\n               <div class=\"modal-footer justify-content-center\">\n            <button class=\"btn btn-success\" type=\"submit\" >Add</button>\n            <button\n              class=\"btn btn-danger\"\n              data-dismiss=\"modal\"\n              \n            >\n              Cancel\n            </button>\n          </div>\n            </form>\n          </div>\n\n         \n        </div>\n      </div>\n    </div>\n  </div>\n\n\n  <section class=\"container pb-5\" style=\"width: 70%; float: right\">\n  <div class=\"row\">\n    <div class=\"card-group\">\n       \n   ".concat(galleryCard, "\n    </div>\n  </div>\n</section>\n  \n \n  ");
+  return galleryTemplate;
+}
+
+var _default = galleryTemplate;
 exports.default = _default;
 },{}],"dashboard.js":[function(require,module,exports) {
 "use strict";
@@ -2015,6 +2036,8 @@ exports.default = void 0;
 var _courseTemplate = _interopRequireDefault(require("./courseTemplate"));
 
 var _eventTemplate = _interopRequireDefault(require("./eventTemplate"));
+
+var _galleryTemplate = _interopRequireDefault(require("./galleryTemplate"));
 
 var _axios = _interopRequireDefault(require("axios"));
 
@@ -2032,19 +2055,21 @@ var showContent = function showContent(content) {
     var deleteCourseBtn = document.getElementById('deleteCourseBtn'); // getting id of course that needs to be deleted
 
     if (deleteCourseBtn) {
-      deleteCourseBtn.addEventListener('click', function (e) {
-        var courseID = deleteCourseBtn.getAttribute('data-courseid');
-        (0, _axios.default)({
-          method: 'DELETE',
-          url: '/api/v1/courses/' + courseID
-        }).then(function (res) {
-          if (res.data.status === 'success') {
-            console.log(res.data);
-            alert('course deleted successfully');
-            location.assign('/dashboard');
-          }
-        }).catch(function (err) {
-          alert(err.response.data.message);
+      document.querySelectorAll('#deleteCourseBtn').forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+          var courseID = btn.getAttribute('data-courseID');
+          (0, _axios.default)({
+            method: 'DELETE',
+            url: '/api/v1/courses/' + courseID
+          }).then(function (res) {
+            if (res.data.status === 'success') {
+              console.log(res.data);
+              alert('course deleted successfully');
+              location.assign('/dashboard');
+            }
+          }).catch(function (err) {
+            alert(err.response.data.message);
+          });
         });
       });
     }
@@ -2059,19 +2084,50 @@ var showContent = function showContent(content) {
     var deleteEventBtn = document.getElementById('deleteEventBtn'); // getting id of course that needs to be deleted
 
     if (deleteEventBtn) {
-      deleteEventBtn.addEventListener('click', function (e) {
-        var eventID = deleteEventBtn.getAttribute('data-eventID');
-        (0, _axios.default)({
-          method: 'DELETE',
-          url: '/api/v1/events/' + eventID
-        }).then(function (res) {
-          if (res.data.status === 'success') {
-            console.log(res.data);
-            alert('event deleted successfully');
-            location.assign('/dashboard');
-          }
-        }).catch(function (err) {
-          alert(err.response.data.message);
+      document.querySelectorAll('#deleteEventBtn').forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+          var eventID = btn.getAttribute('data-eventID');
+          (0, _axios.default)({
+            method: 'DELETE',
+            url: '/api/v1/events/' + eventID
+          }).then(function (res) {
+            if (res.data.status === 'success') {
+              console.log(res.data);
+              alert('event deleted successfully');
+              location.assign('/dashboard');
+            }
+          }).catch(function (err) {
+            alert(err.response.data.message);
+          });
+        });
+      });
+    }
+  } else if (content === 'gallery') {
+    var _template2 = (0, _galleryTemplate.default)();
+
+    dashBoardContainer.innerHTML = '';
+
+    var _node2 = document.createRange().createContextualFragment(_template2);
+
+    dashBoardContainer.appendChild(_node2);
+    var deleteImageBtn = document.getElementById('deleteImageBtn'); // getting id of course that needs to be deleted
+
+    if (deleteImageBtn) {
+      document.querySelectorAll('#deleteImageBtn').forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+          var imageID = btn.getAttribute('data-imageID');
+          (0, _axios.default)({
+            method: 'DELETE',
+            url: '/api/v1/gallery/' + imageID
+          }).then(function (res) {
+            if (res.data.status === 'success') {
+              console.log(res.data);
+              alert('image deleted successfully');
+              location.assign('/dashboard');
+            }
+          }).catch(function (err) {
+            alert(err.response.data.message);
+          });
         });
       });
     }
@@ -2080,7 +2136,7 @@ var showContent = function showContent(content) {
 
 var _default = showContent;
 exports.default = _default;
-},{"./courseTemplate":"courseTemplate.js","./eventTemplate":"eventTemplate.js","axios":"../../node_modules/axios/index.js"}],"index.js":[function(require,module,exports) {
+},{"./courseTemplate":"courseTemplate.js","./eventTemplate":"eventTemplate.js","./galleryTemplate":"galleryTemplate.js","axios":"../../node_modules/axios/index.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _login = _interopRequireDefault(require("./login"));
@@ -2095,6 +2151,12 @@ var loginForm = document.getElementById('login-form');
 var dashboard = document.getElementById('dashboard');
 
 if (dashboard) {
+  document.getElementById('dashboardBtn').addEventListener('click', function (e) {
+    var dashBoardContainer = document.getElementById('dashBoardContainer');
+    dashBoardContainer.innerHTML = '';
+    var node = document.createRange().createContextualFragment('<img src="/images/pic1.jpg" alt="" srcset="" />');
+    dashBoardContainer.appendChild(node);
+  });
   document.getElementById('courses').addEventListener('click', function (e) {
     console.log('inside eventlistner');
     (0, _dashboard.default)('course');
@@ -2102,6 +2164,10 @@ if (dashboard) {
   document.getElementById('event').addEventListener('click', function (e) {
     console.log('inside eventlistner');
     (0, _dashboard.default)('event');
+  });
+  document.getElementById('gallery').addEventListener('click', function (e) {
+    console.log('inside eventlistner');
+    (0, _dashboard.default)('gallery');
   });
 }
 
@@ -2112,6 +2178,22 @@ if (loginForm) {
     var password = document.getElementById('password').value;
     e.preventDefault();
     (0, _login.default)(email, password);
+  });
+}
+
+function deleteImage(imageID) {
+  imageID = deleteImageBtn.getAttribute('data-imageID');
+  (0, _axios.default)({
+    method: 'DELETE',
+    url: '/api/v1/gallery/' + imageID
+  }).then(function (res) {
+    if (res.data.status === 'success') {
+      console.log(res.data);
+      alert('image deleted successfully');
+      location.assign('/dashboard');
+    }
+  }).catch(function (err) {
+    alert(err.response.data.message);
   });
 }
 },{"./login":"login.js","axios":"../../node_modules/axios/index.js","./dashboard":"dashboard.js"}],"../../../../../../../Amrit/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -2142,7 +2224,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57018" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53477" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

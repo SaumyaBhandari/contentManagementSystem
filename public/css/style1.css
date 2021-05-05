@@ -1,0 +1,80 @@
+.card {
+  display: block;
+  width: 100%;
+}
+
+#sidebar {
+  z-index: 5;
+  color: white;
+}
+#sidebar li:hover {
+  color: #48b13e !important;
+}
+#sidebar a {
+  color: inherit !important;
+}
+
+.login-container {
+  display: flex;
+  /* align-items: center; */
+  box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.2);
+
+  padding: 40px 20px;
+  flex-direction: column;
+  height: 400px;
+  color: black;
+  width: 400px !important;
+  border: 1px solid rgba(0, 0, 0, 0.158);
+}
+.login-container input {
+  background-color: aliceblue;
+}
+.login-container h4 {
+  color: lightseagreen;
+  text-shadow: 1px 1px 1px rgb(73, 73, 73);
+}
+.login-box {
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#spinner-grow {
+  display: none;
+}
+
+#login-btn {
+  margin-top: 5px;
+}
+
+.more-photos {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.college-logo {
+  height: 100%;
+  width: 15%;
+}
+@media only screen and (max-width: 768px) {
+  .college-logo {
+    height: 100%;
+    width: 50%;
+  }
+}
+.profile-picture {
+  width: 30px;
+  display: inline-block;
+}
+
+.top-navbar {
+  padding: 12px 12px 0px 12px !important;
+
+  padding-bottom: 0px !important;
+
+  background-color: #48b13e;
+  width: 100%;
+  float: right;
+  text-align: right;
+}

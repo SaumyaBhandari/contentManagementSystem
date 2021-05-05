@@ -11,7 +11,9 @@ const eventRoute = require('./routes/eventRoute');
 const errorHandler = require('./controllers/errorController');
 const authController = require('./controllers/authController');
 const viewRoutes = require('./routes/viewRoute');
+const galleryRoutes = require('./routes/galleryRoute');
 const cookieParser = require('cookie-parser');
+const router = require('./routes/galleryRoute');
 
 app.use(morgan('dev'));
 
@@ -33,15 +35,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', authController.isLoggedIn, viewRoutes);
 app.use('/api/v1/courses', courseRoute);
 app.use('/api/v1/events', eventRoute);
+app.use(
+  '/api/v1/gallery',
 
+  galleryRoutes
+);
 app.use('/api/v1/users', userRoute);
-app.use('*', (req, res, next) => {
-  res.status(404).render('error', {
-    title: 'error',
-    message: 'Page not found',
-    user: undefined,
-    courses: undefined,
-  });
+app.use('*', authController.isLoggedIn, (req, res, next) => {
+  next(new AppError('Page not found', 404));
 });
 
 // using global error handler

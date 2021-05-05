@@ -9,7 +9,7 @@
     </script>
   </head>
   <body>
-    <div id="dashboard" style="background-image: url(images/pic1.jpg)">
+    <div id="dashboard">
       <div id="sidebar" onclick="togglemenu()">
         <div class="user_icon">
           <img src="/images/user_icon.png" alt="User_Icon" />
@@ -24,7 +24,7 @@
             <a href="/"><i class="fa fa-arrow-left"></i>Back</a>
           </li>
           <li>
-            <a href="/dashboard"><i class="fa fa-home"></i>Home</a>
+            <a href="#" id="dashboardBtn"><i class="fa fa-home"></i>Home</a>
           </li>
           <li id="courses" data-courses="<%= JSON.stringify(courses) %>">
             <a><i class="fa fa-book"></i>Course</a>
@@ -35,7 +35,9 @@
             >
           </li>
           <li>
-            <a href="gallery.html"><i class="fa fa-image"></i>Gallery</a>
+            <a id="gallery" data-gallery="<%= JSON.stringify(gallery) %>"
+              ><i class="fa fa-bell"></i>Gallery</a
+            >
           </li>
         </ul>
       </div>
@@ -45,7 +47,9 @@
         </h2>
       </div>
     </div>
-    <div id="dashBoardContainer"></div>
+    <div id="dashBoardContainer">
+      <img src="/images/pic1.jpg" alt="" srcset="" />
+    </div>
 
     <!-- <footer><%- include('./footer'); %></footer> -->
     <script src="/js/bundle.js"></script>

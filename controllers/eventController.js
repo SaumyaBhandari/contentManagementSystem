@@ -37,25 +37,33 @@ const upload = multer({
   fileFilter: multerFilter,
 });
 
-exports.uploadCoverPhoto = upload.array('photos');
+exports.uploadCoverPhoto = upload.single('coverPhoto');
 
-exports.getEvents = async (req, res, next) => {
-  try {
-    const events = await Event.find();
-
+exports.getEvents = catchAsync(async (req, res, next) => {
+  const events = await Event.find();
+  console.log(req.fromDashboard);
+  if (req.fromDashboard) {
     res.locals.events = events;
-    next();
-  } catch (err) {
-    res.locals.events = undefined;
-    next();
+    console.log(
+      'inside if statementllllllllllllllllllllllllllllllllllllllllllllllllllllllllll'
+    );
+    return next();
   }
-};
+  console.log(
+    'outside if statementllllllllllllllllllllllllllllllllllllllllllllllllllllllllll'
+  );
+  res.status(200).render('events', {
+    events,
+    title: 'Events',
+  });
+});
 
 exports.addEvent = catchAsync(async (req, res, next) => {
   // console.log(req.body);
 
-  if (req.files) {
-    req.body.photos = req.files.map((el) => el.filename);
+  if (req.file) {
+    req.body.coverPhoto = req.file.filename;
+    // req.body.coverPhoto = req.files.map((el) => el.filename);
   }
   const event = await Event.create(req.body);
 
@@ -69,15 +77,16 @@ exports.addEvent = catchAsync(async (req, res, next) => {
 
 exports.getSingleEvent = catchAsync(async (req, res, next) => {
   const event = await Event.findOne({ _id: req.params.id });
-  res.status(200).render('course', {
+  console.log('////////////////////////////// in get single event');
+  res.status(200).render('event', {
     event,
     title: event.name,
   });
 });
 exports.updateEvent = catchAsync(async (req, res, next) => {
-  if (req.files.length > 0) {
+  if (req.file) {
     console.log('..................... file is runnng ////////////////');
-    req.body.photos = req.files.map((el) => el.filename);
+    req.body.coverPhoto = req.file.filename;
   }
 
   console.log(req.body);

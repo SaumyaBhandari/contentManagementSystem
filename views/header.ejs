@@ -1,9 +1,11 @@
 <div class="top-navbar">
-  <p style="color: #fff; text-align: left; margin-left: 30px">
+  <p class="float-left" style="color: #fff; display:inline-block; ">
     Call Us at: 9876543210, 01-2345678
   </p>
   <% if (user) { %>
   <a href="/dashboard" class="login font-weight-bold">
+    <div class="profile-picture "><img class=" img-fluid rounded-circle" src="/images/users/<%= user.picture %>" alt="" srcset=""></div>
+    
     <%= user.name.toUpperCase() %>
   </a>
   <a href="/logout" class="register font-weight-bold"> Logout </a>
@@ -15,10 +17,10 @@
 
 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
   <div class="container">
-    <div class="logo"><img src="/images/logo.jpg" alt="logo" /></div>
-    <a href="/" class="navbar-brand text-success font-weight-bold">
-      HeraldCollege</a
-    >
+    
+    
+      <a  href="/" class="college-logo navbar-brand"><img src="/images/logo.png" class="img-fluid"  alt="logo" /></a>
+     
     <button
       class="navbar-toggler"
       type="button"

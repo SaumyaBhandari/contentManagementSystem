@@ -14,11 +14,10 @@ const schema = mongoose.Schema({
   location: String,
   noticeType: {
     type: String,
-    enum: ['Non Academic Notice', 'Academic Notice'],
-    default: 'Non Academic Notice',
+    enum: ['Non Academic Event', 'Academic Event'],
+    default: 'Non Academic Event',
   },
   coverPhoto: String,
-  photos: [String],
 });
 
 const model = mongoose.model('event', schema);

@@ -14,7 +14,7 @@ module.exports = (err, req, res, next) => {
   res.status(err.statusCode).render('error', {
     statusCode: err.statusCode,
     message: err.message,
-    courses: undefined,
+
     title: 'Error',
   });
 };
