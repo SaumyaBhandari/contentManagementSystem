@@ -19,7 +19,7 @@ router.use(courseController.getCourses);
 
 router.route('/login').get(viewController.login);
 router.route('/courses/:courseID').get(courseController.getSingleCourse);
-router.route('/events').get(eventController.getEvents);
+router.route('/events').get(authController.protect, eventController.getEvents);
 router.route('/gallery').get(galleryController.getGallery);
 router.route('/events/:id').get(eventController.getSingleEvent);
 router.route('/dashboard').get(
