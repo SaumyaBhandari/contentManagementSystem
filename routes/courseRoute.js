@@ -20,7 +20,7 @@ router
   );
 
 router.post(
-  '/update/:courseID',
+  '/update/:id',
   authController.protect,
   authController.restrictTo('admin'),
   courseController.updateCourse

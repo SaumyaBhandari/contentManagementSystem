@@ -96,8 +96,8 @@ function eventTemplate() {
 
                 <select style="margin-bottom:20px" class=" nav-link dropdown-toggle "  name = "noticeType" id="noticeType">
                 <i class="fa fa-fw fa-bell"></i>
-  <option value="Academic Notice">Academic Notice</option>
-  <option dropdown-item value="Non Academic Notice">Non Academic Notice</option>
+  <option value="Academic Event">Academic Event</option>
+  <option dropdown-item value="Non Academic Event">Non Academic Event</option>
 
 </select>
 
@@ -209,8 +209,8 @@ function eventTemplate() {
 
                 <select style="margin-bottom:20px" class=" nav-link dropdown-toggle " form = "addEventForm" name = "noticeType" id="noticeType">
                 <i class="fa fa-fw fa-bell"></i>
-  <option value="Academic Notice">Academic Notice</option>
-  <option dropdown-item value="Non Academic Notice">Non Academic Notice</option>
+  <option value="Academic Event">Academic Event</option>
+  <option dropdown-item value="Non Academic Event">Non Academic Event</option>
 
 </select>
 

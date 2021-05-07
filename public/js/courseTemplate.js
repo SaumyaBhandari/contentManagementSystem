@@ -36,7 +36,7 @@ function getCourseTemplate() {
             </div>
 
             <div class="modal-body">
-            <form class="form-group font-weight-bold" method='POST' id = "updateCourseForm${index}" action='/api/v1/courses/update/${el.courseID}'>
+            <form class="form-group font-weight-bold" method='POST' id = "updateCourseForm${index}" action='/api/v1/courses/update/${el._id}'>
             <label>Course Name:</label>
             <input type="text" style="width: 70%;float: right;"  name="name" value = '${el.name}'> <br>
             <label>Course Tag:</label>

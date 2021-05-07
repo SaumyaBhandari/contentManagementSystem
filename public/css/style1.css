@@ -13,25 +13,30 @@
 #sidebar a {
   color: inherit !important;
 }
+.login-form {
+  width: 100%;
+}
 
 .login-container {
   display: flex;
-  /* align-items: center; */
-  box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.2);
-
+  align-items: center;
+  box-shadow: 3px 3px 7px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
   padding: 40px 20px;
   flex-direction: column;
-  height: 400px;
+  height: 450px;
   color: black;
   width: 400px !important;
-  border: 1px solid rgba(0, 0, 0, 0.158);
+  /* border: 1px solid rgba(0, 0, 0, 0.158); */
 }
 .login-container input {
-  background-color: aliceblue;
+  background-color: rgba(255, 255, 255, 0.315);
 }
 .login-container h4 {
   color: lightseagreen;
-  text-shadow: 1px 1px 1px rgb(73, 73, 73);
+  font-weight: 500;
+  font-size: 2em !important;
+  /* text-shadow: 1px 1px 1px rgba(110, 109, 109, 0.384); */
 }
 .login-box {
   margin: 20px;
@@ -70,11 +75,33 @@
 
 .top-navbar {
   padding: 12px 12px 0px 12px !important;
-
   padding-bottom: 0px !important;
-
   background-color: #48b13e;
   width: 100%;
   float: right;
   text-align: right;
+}
+.top-navbar p {
+  display: inline-block;
+}
+
+@media only screen and (max-width: 768px) {
+  .top-navbar p {
+    display: block;
+  }
+  .login,
+  .register {
+    /* margin: 0px !important; */
+    font-size: 0.75em;
+  }
+
+  .top-navbar p {
+    font-size: 0.75em;
+  }
+}
+
+.login-college-logo {
+  width: 200px;
+  /* padding: 20px; */
+  /* box-shadow: 1px 1px 3px rgb(117, 116, 116); */
 }

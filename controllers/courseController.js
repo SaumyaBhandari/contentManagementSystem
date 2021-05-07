@@ -58,10 +58,9 @@ exports.getSingleCourse = catchAsync(async (req, res, next) => {
   });
 });
 exports.updateCourse = catchAsync(async (req, res, next) => {
-  const course = await Course.findOneAndUpdate(
-    { courseId: req.params.id },
-    req.body
-  );
+  console.log(req.body);
+  console.log(req.params.id);
+  const course = await Course.findByIdAndUpdate(req.params.id, req.body);
   console.log('inside update course............');
   console.log(course);
   let redirectURL = `/courses/${course._id}`;
