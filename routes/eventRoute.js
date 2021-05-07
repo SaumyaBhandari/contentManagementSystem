@@ -3,7 +3,10 @@ const router = require('express').Router();
 const eventController = require('../controllers/eventController');
 const authController = require('../controllers/authController');
 
-router.use(authController.protect);
+router.use(
+  authController.protect,
+  authController.restrictTo('admin', 'students')
+);
 router
   .route('/')
   .get(eventController.getEvents)
