@@ -39,6 +39,8 @@ function getCourseTemplate() {
             <form class="form-group font-weight-bold" method='POST' id = "updateCourseForm${index}" action='/api/v1/courses/update/${el._id}'>
             <label>Course Name:</label>
             <input type="text" style="width: 70%;float: right;"  name="name" value = '${el.name}'> <br>
+            <label>Course Id:</label>
+            <input type="text" style="width: 70%;float: right;"  name="courseID" value = '${el.courseID}'> <br>
             <label>Course Tag:</label>
             <input type="text" style="width: 70%;  float: right;" name="tag" value = '${el.tag}'>
             <label>Course Description:</label>
@@ -120,36 +122,43 @@ function getCourseTemplate() {
           
                           <div class="modal-body">
                           <form method="POST" id="addCourseForm" action="/api/v1/courses" >
-                                  <div class="form-group font-weight-bold">
-                                      <label>Course Id:</label>
-                                      <input type="text" required name="courseID" style="width: 70%; float: right;"> <br>
-                                      <label>Course Name:</label>
-                                      <input name="name" type="text" require style="width: 70%; float: right;"> <br>
-                                      <label>Course Tag:</label>
-                                      <input name="tag" type="text" require style="width: 70%; float: right;">
-                                  </div>
-                                  <div class="row font-weight-bold">
-                                      <div class="row1 text-center" style="width: 30%;">
-                                      <label>Year 1</label>
-                                      <textarea form="addCourseForm" name="year1" style="width: 90%; height: 90px;"></textarea>
-                                      </div>
-                                      <div class="row2 text-center" style="width: 30%;">
-                                      <label>Year 2</label>
-                                      <textarea form="addCourseForm" name="year2" style="width: 90%; height: 90px;"></textarea>
-                                      </div>
-                                      <div class="row3 text-center" style="width: 30%;">
-                                      <label>Year 3</label>
-                                      <textarea form="addCourseForm" name="year3" style="width: 90%; height: 90px;"></textarea>
-                                      
-                                      </div>
-                                  </div>
-                               <div class="modal-footer justify-content-center">
-                              <button type="submit" class="btn btn-success" style="width: 70px;">Adddd
-                              </button>
-                              <button class="btn btn-danger" data-dismiss="modal" style="width: 70px;">Cancel
-                              </button>
-                          </div>
+                        
+                          <label>Course Name:</label>
+                          <input type="text" style="width: 70%;float: right;"  name="name" value = ''> <br>
+                          <label>Course Id:</label>
+                          <input type="text" style="width: 70%;float: right;"  name="courseID" value = ''> <br>
+                          <label>Course Tag:</label>
+                          <input type="text" style="width: 70%;  float: right;" name="tag" value = ''>
+                          <label>Course Description:</label>
+                          <textarea form="addCourseForm" name="description"  style="width: 90%; height: 90px;"></textarea>
+                          <label>Entry Requirement:</label>
+                          <textarea  form="addCourseForm" name = "entryRequirement" style="width: 90%; height: 90px;"></textarea>
                           
+                          <div class="row font-weight-bold">
+                          <div class="row1 text-center" style="width: 30%;">
+                          <label>Year 1</label>
+                          <textarea form="addCourseForm" name="year1"  style="width: 90%; height: 90px;"></textarea>
+                          </div>
+                          <div class="row2 text-center" style="width: 30%;">
+                          <label>Year 2</label>
+                          <textarea form="addCourseForm" name="year2" style="width: 90%; height: 90px;"></textarea>
+                          </div>
+                          <div class="row3 text-center" style="width: 30%;">
+                          <label>Year 3</label>
+                          <textarea form="addCourseForm" name="year3"  style="width: 90%; height: 90px;"></textarea>
+                          
+                          </div>
+                      </div>
+                      
+                       <div class="modal-footer justify-content-center">
+                      <button class="btn btn-success" type= "submit" style="width: 70px;">OK
+                      </button>
+                      <button class="btn btn-danger"data-dismiss="modal"style="width: 70px;">Cancel
+                      </button>
+                      
+                      
+                      
+                          </div>
           
                          
           </form></div>

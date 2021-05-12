@@ -66,9 +66,7 @@ exports.protect = catchAsync(async (req, res, next) => {
   const currentUser = await User.findById(decoded.id);
 
   if (!currentUser) {
-    return next(
-      new AppError('User do not exists in this servers anymore', 401)
-    );
+    return next(new AppError('User do not exists in this server anymore', 401));
   }
 
   req.user = currentUser;

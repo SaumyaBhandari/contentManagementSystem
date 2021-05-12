@@ -32,34 +32,36 @@
 				</div>
 				<br />
 		  
-				<div class="card-columns justify-content-center">
+				<div class="card-columns">
 			
       <% for(var i=0; i < courses.length; i++) { %>
 		
 			  
-				  <div class="card">
-					<div class="card-header card-dark display-6 text-dark text-center">
+				  <div class="card  course-card ">
+					<div class="card-header  card-dark display-6 text-dark text-center">
 						<%= courses[i].name %>
 					</div>
-					<img src="./images/seeEverst.jpg" alt="" class="card-img-top" />
+					
 					<div class="card-body">
 					  <div class="card-title text-center text-success display-1"><%= courses[i].tag %></div>
 					  <div class="card-subtitle text-muted"> Course info :</div>
-					  <p class="card-text">
-						<%= courses[i].description %>
-					  </p>
-					  <a href="/courses/<%=courses[i].id%>" class="btn btn-success btn-block">Read More </a>
+					  <p  class="card-text">
+						<%= courses[i].description ?  courses[i].description.slice(0,100) : '' %>...
+					  </span>
+					  </p> 
+					  
+					  <a href="/courses/<%=courses[i].id%>"  class="btn btn-success btn-block">Read More </a>
 					</div>
 				  </div>
 		  
 			  
            <% } %>
               </div> 
+			
 
 		
 	</section> 
 	<section class="container">
-
 		<a href = "/gallery" class="display-5 text-center text-success"><h4>Gallery</h4></a>
 		<div class="row">
 			<div class="gallery_user">

@@ -5,54 +5,43 @@
     <link rel="stylesheet" href="/css/error.css" />
   </head>
   <body>
-    <%- include('./header'); %>
+    <%- include('./header'); %> <% if (events) {%> <% for(var i=
+    events.length-1; i>=0; i--) {%>
 
+    <section class="card-section mt-4">
+      <div class="card-group">
+        <div class="card m-4">
+          <div class="card-body m-3">
+            <div class="mr-3">
+              <h3 class="mt-3 mb-3 ml-4 text-success text-justify">
+                <%= events[i].noticeType %>
+              </h3>
+              <a href="/events/<%= events[i]._id %>">
+                <h5 class="mt-3 mb-3 text-success ml-4 text-justify">
+                  <%= events[i].name %>
+                </h5></a
+              >
 
-    <% if (events) {%>
+              <p class="ml-4 text-justify"><%= events[i].description %></p>
 
-           
-
-
-      <% for(var i=0; i<events.length; i++) {%>
-     
-        <section class="card-section mt-4">
-          <div class="card-group">
-            <div class="card m-4">
-              <div class="card-body m-3">
-                <div class="mr-3">
-                  <h3 class="mt-3 mb-3 ml-4 text-success text-justify">  <%= events[i].noticeType %> </h3>
-                  <a href="/events/<%= events[i]._id %>">  <h5 class="mt-3 mb-3 text-success ml-4 text-justify"><%= events[i].name %></h5></a>
-    
-                  <p class="ml-4 text-justify">
-                  <%= events[i].description %>
-                  </p>
-    
-                  <img src="images/events/<%= events[i].coverPhoto %>" class="mt-2 ml-4" />
-                  <h6 class="text-justify text-primary mt-5 mb-1 ml-4">
-                    Event Date: <%= events[i].startDate.toLocaleDateString('en-US',{
-                      year: 'numeric', month: 'short', day: 'numeric' }) %>
-                  </h6>
-                 <h6 class="text-justify text-primary mt-1 mb-3 ml-4">
-                    Locaiton of the event: <%= events[i].location.toUpperCase() %>
-                  </h6>
-                </div>
-              </div>
+              <img
+                src="images/events/<%= events[i].coverPhoto %>"
+                class="mt-2 ml-4"
+              />
+              <h6 class="text-justify text-primary mt-5 mb-1 ml-4">
+                Event Date: <%= events[i].startDate.toLocaleDateString('en-US',{
+                year: 'numeric', month: 'short', day: 'numeric' }) %>
+              </h6>
+              <h6 class="text-justify text-primary mt-1 mb-3 ml-4">
+                Locaiton of the event: <%= events[i].location.toUpperCase() %>
+              </h6>
             </div>
           </div>
-        </section>
+        </div>
+      </div>
+    </section>
 
-
-
-
-     <% } %> <%}%>
-
-
-
-
-   
-   
-
-  
+    <% } %> <%}%>
 
     <footer><%- include('./footer'); %></footer>
   </body>
