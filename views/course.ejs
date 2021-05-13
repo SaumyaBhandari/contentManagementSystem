@@ -36,9 +36,7 @@
 						<div class="tab-pane active" id="year-1">
 							<br>
 							<h4>Year 1 </h4>
-							<h5>Overview</h5>
-								<p>This programme aims to provide students with the knowledge of core principles of computer science by combining it with modern computer languages, tools, techniques, and methodologies used by computer professional all over the world. Students will be able to develop and enhance themselves as a programmer, along with problem solving skills.</p>
-							<h5> Modules </h5>
+					
 								<% let modules = course.year1.split(',') %>
                                 <% for(let i = 0;i<modules.length;i++){%>
                                     <p><%= modules[i]%></p>
@@ -49,9 +47,7 @@
 						<div class="tab-pane" id="year-2">
 							<br>
 							<h4>Year 2 </h4>
-							<h5>Overview</h5>
-								<p>This programme aims to provide students with the knowledge of core principles of computer science by combining it with modern computer languages, tools, techniques, and methodologies used by computer professional all over the world. Students will be able to develop and enhance themselves as a programmer, along with problem solving skills.</p>
-							<h5> Modules </h5>
+					
                             <%  modules = course.year2.split(',') %>
                             <% for(let i = 0;i<modules.length;i++){%>
                                 <p><%= modules[i]%></p>
@@ -62,9 +58,7 @@
 						<div class="tab-pane " id="year-3">
 							<br>
 							<h4>Year 3 </h4>
-							<h5>Overview</h5>
-								<p>This programme aims to provide students with the knowledge of core principles of computer science by combining it with modern computer languages, tools, techniques, and methodologies used by computer professional all over the world. Students will be able to develop and enhance themselves as a programmer, along with problem solving skills.</p>
-							<h5> Modules </h5>
+						
                             <%  modules = course.year3.split(',') %>
                             <% for(let i = 0;i<modules.length;i++){%>
                                 <p><%= modules[i]%></p>

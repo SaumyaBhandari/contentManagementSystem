@@ -25,7 +25,7 @@ exports.addAdmin = catchAsync(async (req, res, next) => {
     email: req.body.email,
     password: req.body.password,
     confirmPassword: req.body.confirmPassword,
-    role: 'admin',
+    role: req.body.role,
   };
   const user = await User.create(data);
 

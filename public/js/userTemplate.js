@@ -15,7 +15,7 @@ function userTemplate(user) {
             </select>
           </div>
           <div class="form-group">
-            <label>User</label>
+            <label>Name</label>
 
             <input
               type="text"
