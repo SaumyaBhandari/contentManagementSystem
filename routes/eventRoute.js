@@ -8,21 +8,24 @@ router
   .route('/')
   .get(eventController.getEvents)
   .post(
-    authController.restrictTo('admin'),
+    authController.restrictTo('admin', 'superadmin'),
     eventController.uploadCoverPhoto,
     eventController.addEvent
   );
 router
   .route('/:id')
   .get(eventController.getSingleEvent)
-  .delete(authController.restrictTo('admin'), eventController.deleteEvent);
+  .delete(
+    authController.restrictTo('admin', 'superadmin'),
+    eventController.deleteEvent
+  );
 
 router.post(
   '/update/:id',
 
   eventController.uploadCoverPhoto,
 
-  authController.restrictTo('admin'),
+  authController.restrictTo('admin', 'superadmin'),
   eventController.updateEvent
 );
 

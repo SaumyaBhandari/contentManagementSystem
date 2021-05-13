@@ -29,7 +29,7 @@ router.route('/me').get(authController.protect, (req, res, next) => {
 });
 router.route('/dashboard').get(
   authController.protect,
-  authController.restrictTo('admin'),
+  authController.restrictTo('admin', 'superadmin'),
   (req, res, next) => {
     req.fromDashboard = true;
     next();

@@ -1,58 +1,66 @@
 function userTemplate(user) {
-  const form = `<div class="profile-page" style="margin-bottom: 300px">
-    <div class="page-header header-filter" data-parallax="true"></div>
-    <div class="main main-raised">
-      <div class="profile-content">
-        <div class="container">
-          <h3 class="display-5 text-muted text-center">Add Admin</h3>
-          <form action="/api/v1/users/addAdmin" method="POST">
-            <div class="form-group">
-              <label for="exampleInputEmail1">Name</label>
-  
-              <input
-                type="text"
-                name="name"
-                class="form-control"
-                placeholder="Name"
-              />
-            </div>
-            <div class="form-group">
-              <label for="exampleInputEmail1">Email</label>
-              <input
-                type="email"
-                class="form-control"
-                required
-                name="email"
-                placeholder="Enter email"
-              />
-            </div>
-            <div class="form-group">
-              <label>Password</label>
-              <input
-                type="password"
-                class="form-control"
-                required
-                name="password"
-                placeholder="Password"
-              />
-            </div>
-            <div class="form-group">
-              <label>Confirm Password</label>
-              <input
-                type="password"
-                class="form-control"
-                required
-                name="confirmPassword"
-                placeholder="Password"
-              />
-            </div>
-  
-            <button type="submit" class="btn btn-success">Submit</button>
-          </form>
-        </div>
+  const form = `  <div class="profile-page" style="margin-bottom: 300px">
+  <div class="page-header header-filter" data-parallax="true"></div>
+  <div class="main main-raised">
+    <div class="profile-content">
+      <div class="container">
+        <h3 class="display-5 text-muted text-center">Add User</h3>
+        <form action="/api/v1/users/addUser" method="POST">
+          <div class="form-group">
+            <label for="exampleInputEmail1">User type : </label>
+            <select name="role" required>
+              <option value="student">Student</option>
+              <option value="admin">Admin</option>
+              <option value="superadmin">Super admin</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>User</label>
+
+            <input
+              type="text"
+              name="name"
+              class="form-control"
+              placeholder="Name"
+            />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              required
+              name="email"
+              placeholder="Enter email"
+            />
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input
+              type="password"
+              class="form-control"
+              required
+              name="password"
+              placeholder="Password"
+            />
+          </div>
+          <div class="form-group">
+            <label>Confirm Password</label>
+            <input
+              type="password"
+              class="form-control"
+              required
+              name="confirmPassword"
+              placeholder="Password"
+            />
+          </div>
+
+          <button type="submit" class="btn btn-success">Submit</button>
+        </form>
       </div>
     </div>
-  </div>`;
+  </div>
+</div> `;
 
   const userTemplate = `
   <div class="profile-page">
@@ -85,7 +93,7 @@ function userTemplate(user) {
   </div>
 </div>
 <br />
-${user.role == 'admin' ? form : ''}
+${user.role == 'superadmin' ? form : ''}
 `;
 
   return userTemplate;

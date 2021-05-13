@@ -43,9 +43,7 @@ exports.getGallery = catchAsync(async (req, res, next) => {
 
     return next();
   }
-  console.log(
-    'outside getgallery yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy'
-  );
+
   console.log(gallery);
   res.status(200).render('gallery', {
     gallery,

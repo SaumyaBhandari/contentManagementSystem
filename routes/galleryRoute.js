@@ -7,7 +7,7 @@ router
   .get(galleryController.getGallery)
   .post(
     authController.protect,
-    authController.restrictTo('admin'),
+    authController.restrictTo('admin', 'superadmin'),
     galleryController.uploadPhotos,
     galleryController.updateGallery
   );
@@ -16,7 +16,7 @@ router
   .route('/:id')
   .delete(
     authController.protect,
-    authController.restrictTo('admin'),
+    authController.restrictTo('admin', 'superadmin'),
     galleryController.deleteImage
   );
 

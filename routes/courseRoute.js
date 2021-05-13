@@ -7,7 +7,7 @@ router
   .get(courseController.getCourses)
   .post(
     authController.protect,
-    authController.restrictTo('admin'),
+    authController.restrictTo('admin', 'superadmin'),
     courseController.addCourse
   );
 router
@@ -15,14 +15,14 @@ router
   .get(courseController.getSingleCourse)
   .delete(
     authController.protect,
-    authController.restrictTo('admin'),
+    authController.restrictTo('admin', 'superadmin'),
     courseController.deleteCourse
   );
 
 router.post(
   '/update/:id',
   authController.protect,
-  authController.restrictTo('admin'),
+  authController.restrictTo('admin', 'superadmin'),
   courseController.updateCourse
 );
 

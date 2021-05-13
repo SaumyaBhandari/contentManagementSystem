@@ -4,9 +4,9 @@ const authController = require('../controllers/authController');
 router.post('/signup', authController.signup);
 router.post('/login', authController.login);
 router.post(
-  '/addAdmin',
+  '/addUser',
   authController.protect,
-  authController.restrictTo('admin'),
+  authController.restrictTo('superadmin'),
   authController.addAdmin
 );
 

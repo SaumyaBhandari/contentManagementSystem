@@ -32,7 +32,7 @@ exports.addAdmin = catchAsync(async (req, res, next) => {
   let redirectURL = `/dashboard`;
   console.log(redirectURL);
   res.status(200).render('success', {
-    message: 'admin added successfully',
+    message: user.role + ' added successfully',
     redirectURL,
   });
 });

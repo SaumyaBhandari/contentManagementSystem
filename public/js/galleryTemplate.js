@@ -11,7 +11,7 @@ function galleryTemplate() {
       return `   
     <div class="col-md-5 ">
       <div class="card   m-2">
-        <a href="images/img1.jpg" data-lightbox="images"
+        <a href=""
           ><img
             class="card-img-top"
             src="images/gallery/${el}"
