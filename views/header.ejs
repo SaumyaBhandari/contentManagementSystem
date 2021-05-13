@@ -3,12 +3,18 @@
     Call Us at: 9876543210, 01-2345678
   </p>
   <% if (user) { %>
+    <% if (user.role == 'admin') { %>
   <a href="/dashboard" class="login font-weight-bold">
+    <% } %>
+    <% if (user.role == 'student') { %>
+  <a href="/me" class="login font-weight-bold">
+    <% } %>
     <div class="profile-picture "><img class=" img-fluid rounded-circle" src="/images/users/<%= user.picture %>" alt="" srcset=""></div>
     
     <%= user.name.toUpperCase() %>
   </a>
   <a href="/logout" class="register font-weight-bold"> Logout </a>
+
   <%} if(!user) { %>
   <a href="/login" class="login font-weight-bold"> Login </a>
   <a href="/register" class="register font-weight-bold"> Register </a>

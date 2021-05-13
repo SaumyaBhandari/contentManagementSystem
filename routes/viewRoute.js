@@ -22,6 +22,11 @@ router.route('/courses/:courseID').get(courseController.getSingleCourse);
 router.route('/events').get(authController.protect, eventController.getEvents);
 router.route('/gallery').get(galleryController.getGallery);
 router.route('/events/:id').get(eventController.getSingleEvent);
+router.route('/me').get(authController.protect, (req, res, next) => {
+  res.render('profile', {
+    title: 'my profile',
+  });
+});
 router.route('/dashboard').get(
   authController.protect,
   authController.restrictTo('admin'),

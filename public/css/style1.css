@@ -67,6 +67,9 @@
   width: 30px;
   display: inline-block;
 }
+.profile-content .container {
+  padding: 20px;
+}
 
 .top-navbar {
   padding: 12px 12px 0px 12px !important;
@@ -118,4 +121,86 @@
   margin: 5px;
   width: 390px;
   height: 390px; */
+}
+
+.zoom:hover {
+  transform: scale(1.5); /* (150% zoom)*/
+}
+
+/* profile css */
+
+.main-raised {
+  border-radius: 6px;
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14),
+    0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+.main {
+  background: #fff;
+  position: relative;
+  z-index: 3;
+}
+
+.profile-page .profile {
+  text-align: center;
+}
+
+.profile-page .profile img {
+  max-width: 140px;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  -webkit-transform: translate3d(0, -50%, 0);
+  -moz-transform: translate3d(0, -50%, 0);
+  -o-transform: translate3d(0, -50%, 0);
+  -ms-transform: translate3d(0, -50%, 0);
+  transform: translate3d(0, -50%, 0);
+}
+
+.img-raised {
+  box-shadow: 0 5px 15px -8px rgba(0, 0, 0, 0.24),
+    0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+.img-fluid,
+.img-thumbnail {
+  max-width: 100%;
+  height: auto;
+}
+
+p {
+  font-size: 14px;
+  margin: 0 0 10px;
+}
+
+.tab-space {
+  padding: 20px 0 50px;
+}
+
+.profile-page .profile .name {
+  margin-top: -80px;
+}
+
+.profile-page {
+  width: 60vw;
+}
+
+/* dashboard css */
+#dashBoardContainer {
+  margin-top: 50px;
+  width: 80vw;
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+@media only screen and (max-width: 768px) {
+  #dashBoardContainer {
+    width: 100vw;
+  }
+}
+
+.add-icon {
+  margin-right: 90%;
 }

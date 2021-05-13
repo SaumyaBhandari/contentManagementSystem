@@ -13,10 +13,10 @@ function eventTemplate() {
       date = a.toISOString().split('T')[0];
     }
 
-    return `   <section class="container text-left">
+    return `   
     <div
       class="card text-dark mb-3 font-weight-bold mt-2"
-      style="max-width: 75%; float: right"
+      
     >
       <div
         class="card-header"
@@ -177,7 +177,7 @@ function eventTemplate() {
         </p>
       </div>
     </div>
-  </section>`;
+`;
   });
 
   const eventTemplate = `
@@ -186,7 +186,7 @@ function eventTemplate() {
     class="btn btn-secondary text-white btn-md"
     data-target="#mymodel"
     data-toggle="modal"
-    style="margin-left: 85%; width: 50px"
+    style=" width: 50px"
   >
     Add
   </button>
@@ -279,7 +279,11 @@ function eventTemplate() {
     </div>
   </div>
 </div>
-${eventCard}
+<section class="container text-left" style="padding:30px">
+
+${eventCard ? eventCard.join(' ') : ''}
+
+</section>
 `;
 
   return eventTemplate;

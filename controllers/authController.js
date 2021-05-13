@@ -19,6 +19,23 @@ exports.signup = catchAsync(async (req, res, next) => {
     user,
   });
 });
+exports.addAdmin = catchAsync(async (req, res, next) => {
+  const data = {
+    name: req.body.name,
+    email: req.body.email,
+    password: req.body.password,
+    confirmPassword: req.body.confirmPassword,
+    role: 'admin',
+  };
+  const user = await User.create(data);
+
+  let redirectURL = `/dashboard`;
+  console.log(redirectURL);
+  res.status(200).render('success', {
+    message: 'admin added successfully',
+    redirectURL,
+  });
+});
 
 exports.login = catchAsync(async (req, res, next) => {
   const { email, password } = req.body;

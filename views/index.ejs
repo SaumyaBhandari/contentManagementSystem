@@ -10,12 +10,12 @@
 
     
     <div class="bgvdo">
-     <div class="home-content">
+     <div class="home-content" style="padding:20%">
 			<h3>WELCOME TO HERALD COLLEGE</h3>
-			<p>Herald College Kathmandu provides the best UK university education at most affordable fees. It offers Bachelor Degrees in IT and Business in direct partnership with the University of Wolverhampton, UK. Programmes that Herald College Kathmandu offers are flexible and have always aimed to foster a broader based knowledge.</p>
-			<button class="btn btn-success text-white btn-lg"> Button </button>
+			<p class="p-lead" style="font-size:18px">Herald College Kathmandu provides the best UK university education at most affordable fees. It offers Bachelor Degrees in IT and Business in direct partnership with the University of Wolverhampton, UK. Programmes that Herald College Kathmandu offers are flexible and have always aimed to foster a broader based knowledge.</p>
+			<a href="/about" class="btn btn-success text-white btn-lg"> Learn More </a>
 		</div>
-	</div></div>
+	</div>
  <br><br>
 	<section class="container courses text-left">
 		
@@ -64,8 +64,7 @@
 	<section class="container">
 		<a href = "/gallery" class="display-5 text-center text-success"><h4>Gallery</h4></a>
 		<div class="row">
-			<div class="gallery_user">
-	
+		
 			  <% if (gallery)  {%>
 	
 			   
@@ -73,10 +72,22 @@
 	
 				<% for(var i=0; i<gallery[0].images.length && i<6; i++) {%>
 	
-					<a href="/images/gallery/<%= gallery[0].images[i] %>" data-lightbox="images"
-				><img src="/images/gallery/<%= gallery[0].images[i] %>"
-			  /></a>
+					
 				  
+			  
+				<div class="col-md-4">
+				  <div class="img-rounded img-fluid m-1">
+					<a href="#" data-lightbox="images" class="zoom">
+					  <img  class="img-circle" src="/images/gallery/<%= gallery[0].images[i] %>" alt="Lights" style="width:100%">
+					  <!-- <div class="caption">
+						<p>Lorem ipsum...</p>
+					  </div> -->
+					</a>
+				  </div>
+				</div>
+			
+			
+
 				
 			   <% } %> <%}%>
 	

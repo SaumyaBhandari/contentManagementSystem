@@ -110,7 +110,7 @@ function getCourseTemplate() {
   });
 
   const courseTemplate = `	<div class="add-icon">
-              <button class="btn btn-secondary text-white btn-sm" data-target="#mymodel" data-toggle="modal" style="margin-left: 85%; width: 50px;"> Add </button>
+              <button class="btn btn-secondary text-white btn-sm" data-target="#mymodel" data-toggle="modal" style=" width: 50px;"> Add </button>
           
               <div class="modal" id="mymodel">
                   <div class="modal-dialog modal-dialog-centered">
@@ -172,7 +172,7 @@ function getCourseTemplate() {
           
               <section class="container text-left">
                   <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-12 d-block">
+                  <div class="col-lg-12 col-md-12 col-sm-12 ">
                   <table style="font-weight: bold;">
                   <tr>
                   <th>Course id</th>

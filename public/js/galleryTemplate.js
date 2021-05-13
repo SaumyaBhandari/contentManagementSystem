@@ -75,7 +75,7 @@ function galleryTemplate() {
       class="btn btn-secondary text-white btn-sm"
       data-target="#mymodel"
       data-toggle="modal"
-      style="margin-left: 85%; width: 50px"
+      style=" width: 50px"
     >
       Add
     </button>
@@ -120,7 +120,7 @@ function galleryTemplate() {
   </div>
 
 
-  <section class="container pb-5" style="width: 70%; float: right">
+  <section class="container pb-5" >
   <div class="row">
    
        

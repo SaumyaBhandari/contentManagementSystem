@@ -1,6 +1,7 @@
 import courseTemplate from './courseTemplate';
 import eventTemplate from './eventTemplate';
 import galleryTemplate from './galleryTemplate';
+import userTemplate from './userTemplate';
 import axios from 'axios';
 const showContent = (content) => {
   let dashBoardContainer = document.getElementById('dashBoardContainer');
@@ -103,6 +104,14 @@ const showContent = (content) => {
         });
       });
     }
+  } else if (content === 'profile') {
+    let user = JSON.parse(
+      document.getElementById('dashboardBtn').getAttribute('data-user')
+    );
+    const template = userTemplate(user);
+    dashBoardContainer.innerHTML = '';
+    let node = document.createRange().createContextualFragment(template);
+    dashBoardContainer.appendChild(node);
   }
 };
 

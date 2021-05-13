@@ -82,14 +82,13 @@ h2 a {
 /*.............Course...........*/
 
 .add_icon {
-  margin-left: 85%;
+  justify-content: flex-end;
+  align-self: flex-start;
 }
 table {
   margin-top: 15px;
   font-family: arial, sans-serif;
   border-collapse: collapse;
-  float: right;
-  width: 70%;
 }
 
 td,
@@ -108,7 +107,6 @@ th {
 /*..........Gallery.........*/
 
 .gallery img {
-  float: right;
   width: 400px;
   height: auto;
   padding: 15px;
@@ -140,8 +138,8 @@ th {
   text-align: center;
   font-size: 20px;
 
-  color: aliceblue;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.514), rgba(0, 0, 0, 0.534)),
+  color: #eee7e7d4;
+  background: linear-gradient(#03014494, #03023a83),
     url('/images/background.jpg');
   background-size: cover;
   background-position: center;
@@ -242,7 +240,7 @@ th {
   width: 45%;
 }
 .side_img {
-  width: 40%;
+  height: 300px;
 }
 .about_desc {
   margin-top: 100px;

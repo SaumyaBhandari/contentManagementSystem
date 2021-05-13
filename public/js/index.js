@@ -8,14 +8,7 @@ const dashboard = document.getElementById('dashboard');
 
 if (dashboard) {
   document.getElementById('dashboardBtn').addEventListener('click', (e) => {
-    let dashBoardContainer = document.getElementById('dashBoardContainer');
-    dashBoardContainer.innerHTML = '';
-    let node = document
-      .createRange()
-      .createContextualFragment(
-        '<img src="/images/pic1.jpg" alt="" srcset="" />'
-      );
-    dashBoardContainer.appendChild(node);
+    showContent('profile');
   });
   document.getElementById('courses').addEventListener('click', (e) => {
     console.log('inside eventlistner');

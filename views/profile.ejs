@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./head'); %>
+    <script type="text/javascript">
+      function togglemenu() {
+        document.getElementById('sidebar').classList.toggle('active');
+      }
+    </script>
+  </head>
+  <body>
+    <div id="dashboard">
+      <% if(user) {%>
+
+      <div id="sidebar" onclick="togglemenu()">
+        <div class="user_icon"></div>
+        <div class="toggle-btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul>
+          <li>
+            <a href="/" id="dashboardtn" data-user="<%= JSON.stringify(user) %>"
+              ><i class="fa fa-home"></i>Back to home</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <% }%>
+
+      <div class="dashboard">
+        <h2>
+          <a href="/me"><i class="fa fa-fw fa-clone"></i>My profile</a>
+        </h2>
+      </div>
+    </div>
+    <div id="dashBoardContainer">
+      <div class="profile-page">
+        <div class="page-header header-filter" data-parallax="true"></div>
+        <div class="main main-raised">
+          <div class="profile-content">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-6 ml-auto mr-auto">
+                  <div class="profile">
+                    <div class="avatar">
+                      <img
+                        src="/images/users/<%= user.picture %>"
+                        alt="Circle Image"
+                        class="img-raised rounded-circle img-fluid"
+                      />
+                    </div>
+                    <div class="name">
+                      <h3 class="title"><%= user.name.toUpperCase() %></h3>
+                      <h6><%= user.role %></h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h5 style="padding: 20px" class="display-5 float:left">
+                Email : <span class="text-muted"><%= user.email %></span>
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+    </div>
+
+    <!-- <footer><%- include('./footer'); %></footer> -->
+    <script src="/js/bundle.js"></script>
+  </body>
+</html>
