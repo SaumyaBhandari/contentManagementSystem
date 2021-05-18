@@ -54,7 +54,9 @@ function eventTemplate() {
               </div>
 
               <div class="modal-footer justify-content-center">
-                <button class="btn btn-success"  data-eventID = ${el._id} id = "deleteEventBtn">
+                <button class="btn btn-success"  data-eventID = ${
+                  el._id
+                } id = "deleteEventBtn">
                   OK
                 </button>
                 <button
@@ -68,6 +70,62 @@ function eventTemplate() {
             </div>
           </div>
         </div>
+
+        <button
+          class="btn btn-success text-white btn-md"
+          data-target="#ejj${index}"
+          data-toggle="modal"
+          style="float: right; margin: 3px; width: 11%"
+        >
+        ${el.publishStatus ? 'Unpublish' : 'Publish'}
+        
+        </button>
+        <div class="modal" id="ejj${index}">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="text-center text-dark">${
+                el.publishStatus ? 'Unpublish' : 'Publish'
+              } Event</h3>
+              <button type="button" class="close" data-dismiss="modal">
+                &times;
+              </button>
+            </div>
+
+            <div class="modal-body">
+              <h5 class="text-dark text-center font-weight-bold">
+                Are you sure you want to ${
+                  el.publishStatus ? 'Unpublish' : 'Publish'
+                } the Event?
+              </h5>
+            </div>
+
+            <div class="modal-footer justify-content-center">
+            <form  method='POST'  id = "" action='/api/v1/events/update/${
+              el._id
+            }'>
+            <input style="display:none" name="publishStatus" value="${
+              el.publishStatus ? false : true
+            }" />
+              <button class="btn btn-success" style="width:100px" type="submit"  data-eventID = ${
+                el._id
+              } id = "">
+              ${el.publishStatus ? 'Unpublish' : 'Publish'}
+              </button>
+              </form>
+              <button
+                class="btn btn-danger"
+                data-dismiss="modal"
+                
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
 
         <button
           class="btn btn-success text-white btn-md"
@@ -89,7 +147,9 @@ function eventTemplate() {
               </div>
 
               <div class="modal-body">
-              <form  method='POST' enctype= "multipart/form-data" id = "updateEventForm${index}" action='/api/v1/events/update/${el._id}'>
+              <form  method='POST' enctype= "multipart/form-data" id = "updateEventForm${index}" action='/api/v1/events/update/${
+      el._id
+    }'>
             <div class="form-group font-weight-bold">
               <div class="nav-item dropdown">
             
@@ -119,7 +179,9 @@ function eventTemplate() {
              
 
               <div>
-              <img style="width:200px;height:200px;" src="/images/events/${el.coverPhoto}" alt="img" >
+              <img style="width:200px;height:200px;" src="/images/events/${
+                el.coverPhoto
+              }" alt="img" >
                 <input type="file" name="coverPhoto" form = "updateEventForm${index}" id="img"  accept="image/*">
               </div>
 

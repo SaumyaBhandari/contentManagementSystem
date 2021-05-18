@@ -14,6 +14,10 @@ const schema = new mongoose.Schema({
 
   year2: String,
   year3: String,
+  publishStatus: {
+    type: Boolean,
+    default: false,
+  },
 });
 const model = mongoose.model('Course', schema);
 

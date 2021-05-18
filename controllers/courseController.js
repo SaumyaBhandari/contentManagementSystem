@@ -2,35 +2,38 @@ const Course = require('../models/courseModel');
 const AppError = require('../utils/AppError');
 const catchAsync = require('../utils/catchAsync');
 
-exports.getCourses = async (req, res, next) => {
-  try {
-    const courses = await Course.find();
+exports.getCourses = catchAsync(async (req, res, next) => {
+  const courses = await Course.find();
+  if (res.locals.user) {
+    if (
+      res.locals.user.role === 'admin' ||
+      res.locals.user.role === 'superadmin'
+    ) {
+      console.log('iiiiiiiiiiiiiiiiiiii inside publish;;;;;;;;;');
+      res.locals.courses = courses;
 
-    console.log(
-      'in get all courses........................................................................'
-    );
-
-    res.locals.courses = courses;
-    next();
-    // res.status(200).json({
-    //   status: 'success',
-    //   results: courses.length,
-    //   data: {
-    //     courses,
-    //   },
-    // });
-    // next()
-  } catch (err) {
-    res.locals.courses = undefined;
-    next();
-    // console.log('error from mongodb');
-    // console.log(err.message);
-    // res.status(400).json({
-    //   status: 'failed',
-    //   message: 'failed to get courses',
-    // });
+      return next();
+    }
   }
-};
+  let a = [];
+  courses.forEach((el) => {
+    if (el.publishStatus) {
+      a.push(el);
+    }
+  });
+  console.log(a);
+  res.locals.courses = a;
+  return next();
+
+  // res.status(200).json({
+  //   status: 'success',
+  //   results: courses.length,
+  //   data: {
+  //     courses,
+  //   },
+  // });
+  // next()
+});
 
 exports.addCourse = catchAsync(async (req, res, next) => {
   // console.log(req.body);

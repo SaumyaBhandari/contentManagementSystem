@@ -40,18 +40,25 @@ const upload = multer({
 exports.uploadCoverPhoto = upload.single('coverPhoto');
 
 exports.getEvents = catchAsync(async (req, res, next) => {
-  const events = await Event.find();
+  let events = await Event.find();
+
+  if (res.locals.user.role == 'student' || !res.locals.user) {
+    let a = [];
+    events.forEach((event) => {
+      if (event.publishStatus) {
+        a.push(event);
+      }
+    });
+    events = a;
+  }
+
   console.log(req.fromDashboard);
   if (req.fromDashboard) {
     res.locals.events = events;
-    console.log(
-      'inside if statementllllllllllllllllllllllllllllllllllllllllllllllllllllllllll'
-    );
+
     return next();
   }
-  console.log(
-    'outside if statementllllllllllllllllllllllllllllllllllllllllllllllllllllllllll'
-  );
+
   res.status(200).render('events', {
     events,
     title: 'Events',

@@ -10,6 +10,10 @@ const schema = mongoose.Schema({
     required: [true, 'event description is required'],
   },
   startDate: Date,
+  publishStatus: {
+    type: Boolean,
+    default: false,
+  },
   endDate: Date,
   location: String,
   noticeType: {
